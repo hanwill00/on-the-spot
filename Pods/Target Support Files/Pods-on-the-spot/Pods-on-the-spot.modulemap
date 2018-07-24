@@ -1,0 +1,6 @@
+framework module Pods_on_the_spot {
+  umbrella header "Pods-on-the-spot-umbrella.h"
+
+  export *
+  module * { export * }
+}
