@@ -28,6 +28,14 @@ class StartViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "alreadyLoggedIn", sender: nil)
+        }
+    }
+    
+    
 //    @IBAction func loginButtonTapped(_ sender: UIButton) {
 ////        self.performSegue(withIdentifier: "startToLogin", sender: self)
 //    }

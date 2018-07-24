@@ -29,7 +29,7 @@
         <!--Item 1-->
         <scene sceneID="SwT-uP-6yb">
             <objects>
-                <viewController id="uan-zy-4eS" customClass="HomeViewController" customModule="on_the_spot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uan-zy-4eS" customClass="HomeTableViewController" customModule="on_the_spot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nah-GT-3Gy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

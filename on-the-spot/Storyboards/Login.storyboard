@@ -41,7 +41,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonTapped:" destination="W32-5H-Et8" eventType="touchUpInside" id="0Qb-G3-6JN"/>
                                     <segue destination="YcF-zG-ueX" kind="show" identifier="startToLogin" id="SRU-16-mjc"/>
                                 </connections>
                             </button>
@@ -65,7 +64,7 @@
                     <connections>
                         <outlet property="LoginButton" destination="wOl-Be-Dna" id="wIK-pZ-lUM"/>
                         <outlet property="SignUpButton" destination="T0U-8b-IXK" id="rUc-mJ-nvs"/>
-                        <segue destination="tna-mO-Z1s" kind="show" id="RzP-Zn-PQj"/>
+                        <segue destination="tna-mO-Z1s" kind="show" identifier="alreadyLoggedIn" id="RzP-Zn-PQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fB-CZ-be9" userLabel="First Responder" sceneMemberID="firstResponder"/>
