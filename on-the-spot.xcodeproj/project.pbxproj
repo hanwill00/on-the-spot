@@ -17,6 +17,7 @@
 		BE2357AB2107E12A00EE9D2C /* DisplayHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */; };
 		BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */; };
 		BE2357AF2107F07000EE9D2C /* HomeTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */; };
+		BE2357B52108E2DA00EE9D2C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* ProfileViewController.swift */; };
 		BE9018322106332B000800F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9018312106332B000800F4 /* AppDelegate.swift */; };
 		BE9018372106332B000800F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9018352106332B000800F4 /* Main.storyboard */; };
 		BE90183921063333000800F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE90183821063333000800F4 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayHangoutViewController.swift; sourceTree = "<group>"; };
 		BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTableViewCell.storyboard; sourceTree = "<group>"; };
+		BE2357B42108E2DA00EE9D2C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BE90182E2106332B000800F4 /* on-the-spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "on-the-spot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9018312106332B000800F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9018362106332B000800F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				BE2357A62107E06400EE9D2C /* LoginViewControllers */,
 				BE2357A72107E0EA00EE9D2C /* HomeTableViewController.swift */,
 				BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */,
+				BE2357B42108E2DA00EE9D2C /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				BE2357AB2107E12A00EE9D2C /* DisplayHangoutViewController.swift in Sources */,
 				BE2357A1210794DC00EE9D2C /* StartViewController.swift in Sources */,
 				BE9018322106332B000800F4 /* AppDelegate.swift in Sources */,
+				BE2357B52108E2DA00EE9D2C /* ProfileViewController.swift in Sources */,
 				BE2357A3210794F700EE9D2C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

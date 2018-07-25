@@ -16,6 +16,7 @@ import FirebaseDatabase
 class LoginViewController: UIViewController {
     
     
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var LoginButton: UIButton!

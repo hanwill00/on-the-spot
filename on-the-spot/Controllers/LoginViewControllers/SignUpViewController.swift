@@ -15,6 +15,7 @@ import FirebaseDatabase
 
 class SignupViewController: UIViewController {
     
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!

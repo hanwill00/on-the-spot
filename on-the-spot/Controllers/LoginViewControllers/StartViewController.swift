@@ -35,6 +35,9 @@ class StartViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
+        
+    }
     
 //    @IBAction func loginButtonTapped(_ sender: UIButton) {
 ////        self.performSegue(withIdentifier: "startToLogin", sender: self)

@@ -13,18 +13,31 @@
         <!--Item 2-->
         <scene sceneID="TIL-RR-cDr">
             <objects>
-                <viewController id="ExN-Tq-Rgl" sceneMemberID="viewController">
+                <viewController id="ExN-Tq-Rgl" customClass="ProfileViewController" customModule="on_the_spot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQZ-wo-bRy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RY0-nj-0gJ">
+                                <rect key="frame" x="163" y="146" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logOutAction:" destination="ExN-Tq-Rgl" eventType="touchUpInside" id="a0y-3u-BV2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WNQ-xf-HQg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="90f-vi-E0r"/>
+                    <connections>
+                        <outlet property="LogoutButton" destination="RY0-nj-0gJ" id="Dth-9v-GFi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r59-Kd-4dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="148"/>
+            <point key="canvasLocation" x="76" y="147.97601199400302"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="SwT-uP-6yb">
