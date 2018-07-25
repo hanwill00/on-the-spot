@@ -18,6 +18,9 @@
 		BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */; };
 		BE2357AF2107F07000EE9D2C /* HomeTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */; };
 		BE2357B52108E2DA00EE9D2C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* ProfileViewController.swift */; };
+		BE6C72F52109259F004630D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F42109259F004630D4 /* User.swift */; };
+		BE6C72F721093777004630D4 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F621093777004630D4 /* FollowService.swift */; };
+		BE6C72F921093A54004630D4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F821093A54004630D4 /* UserService.swift */; };
 		BE9018322106332B000800F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9018312106332B000800F4 /* AppDelegate.swift */; };
 		BE9018372106332B000800F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9018352106332B000800F4 /* Main.storyboard */; };
 		BE90183921063333000800F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE90183821063333000800F4 /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 		BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTableViewCell.storyboard; sourceTree = "<group>"; };
 		BE2357B42108E2DA00EE9D2C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BE6C72F42109259F004630D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BE6C72F621093777004630D4 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
+		BE6C72F821093A54004630D4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		BE90182E2106332B000800F4 /* on-the-spot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "on-the-spot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9018312106332B000800F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9018362106332B000800F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 		BE39BC2F2106944200D48E22 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE6C72F42109259F004630D4 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +135,8 @@
 		BE39BC33210694B300D48E22 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BE6C72F621093777004630D4 /* FollowService.swift */,
+				BE6C72F821093A54004630D4 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -332,6 +341,9 @@
 				BE23579F210783DB00EE9D2C /* LoginViewController.swift in Sources */,
 				BE2357AB2107E12A00EE9D2C /* DisplayHangoutViewController.swift in Sources */,
 				BE2357A1210794DC00EE9D2C /* StartViewController.swift in Sources */,
+				BE6C72F52109259F004630D4 /* User.swift in Sources */,
+				BE6C72F921093A54004630D4 /* UserService.swift in Sources */,
+				BE6C72F721093777004630D4 /* FollowService.swift in Sources */,
 				BE9018322106332B000800F4 /* AppDelegate.swift in Sources */,
 				BE2357B52108E2DA00EE9D2C /* ProfileViewController.swift in Sources */,
 				BE2357A3210794F700EE9D2C /* SignUpViewController.swift in Sources */,

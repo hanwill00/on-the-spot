@@ -11,12 +11,13 @@ import UIKit
 import FirebaseAuth
 import FirebaseUI
 import FirebaseDatabase
+typealias FIRUser = FirebaseAuth.User
 
 
 class SignupViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
-    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var SignUpButton: UIButton!
@@ -33,7 +34,16 @@ class SignupViewController: UIViewController {
     @IBAction func signUpAction(_ sender: Any) {
         Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
             if error == nil {
+                
+                guard let firUser = Auth.auth().currentUser,
+                    let name = self.nameTextField.text,
+                    !name.isEmpty else { return }
+                
+                UserService.create(firUser, name: name) { (user) in
+                    guard let user = user else { return }
+                }
                 self.performSegue(withIdentifier: "signupToHome", sender: self)
+                
             }
             else{
                 let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
