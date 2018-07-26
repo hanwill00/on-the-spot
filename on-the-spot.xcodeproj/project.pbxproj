@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		538DA8844FC221C874F5621F /* Pods_on_the_spot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225048BFC92DB27AC0286213 /* Pods_on_the_spot.framework */; };
+		BE11E892210A7A15002CCD29 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE11E891210A7A15002CCD29 /* SideMenu.framework */; };
+		BE11E896210A82B5002CCD29 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E895210A82B5002CCD29 /* ContactsViewController.swift */; };
 		BE23579B21069EFB00EE9D2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE23579A21069EFB00EE9D2C /* GoogleService-Info.plist */; };
 		BE23579D2107839000EE9D2C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE23579C2107839000EE9D2C /* Login.storyboard */; };
 		BE23579F210783DB00EE9D2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE23579E210783DB00EE9D2C /* LoginViewController.swift */; };
@@ -17,7 +19,7 @@
 		BE2357AB2107E12A00EE9D2C /* DisplayHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */; };
 		BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */; };
 		BE2357AF2107F07000EE9D2C /* HomeTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */; };
-		BE2357B52108E2DA00EE9D2C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* ProfileViewController.swift */; };
+		BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */; };
 		BE6C72F52109259F004630D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F42109259F004630D4 /* User.swift */; };
 		BE6C72F721093777004630D4 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F621093777004630D4 /* FollowService.swift */; };
 		BE6C72F921093A54004630D4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F821093A54004630D4 /* UserService.swift */; };
@@ -31,6 +33,8 @@
 		1F155D91C4FF765E75C27A6D /* Pods-on-the-spot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-on-the-spot.release.xcconfig"; path = "Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot.release.xcconfig"; sourceTree = "<group>"; };
 		225048BFC92DB27AC0286213 /* Pods_on_the_spot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_on_the_spot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9289A05CCEA1832DED663CAD /* Pods-on-the-spot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-on-the-spot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot.debug.xcconfig"; sourceTree = "<group>"; };
+		BE11E891210A7A15002CCD29 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = Carthage/Build/iOS/SideMenu.framework; sourceTree = "<group>"; };
+		BE11E895210A82B5002CCD29 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		BE23579A21069EFB00EE9D2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE23579C2107839000EE9D2C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BE23579E210783DB00EE9D2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +44,7 @@
 		BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayHangoutViewController.swift; sourceTree = "<group>"; };
 		BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTableViewCell.storyboard; sourceTree = "<group>"; };
-		BE2357B42108E2DA00EE9D2C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 		BE6C72F42109259F004630D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE6C72F621093777004630D4 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
 		BE6C72F821093A54004630D4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE11E892210A7A15002CCD29 /* SideMenu.framework in Frameworks */,
 				538DA8844FC221C874F5621F /* Pods_on_the_spot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +72,7 @@
 		6C06760A556BD1CD05AE0089 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE11E891210A7A15002CCD29 /* SideMenu.framework */,
 				225048BFC92DB27AC0286213 /* Pods_on_the_spot.framework */,
 			);
 			name = Frameworks;
@@ -97,7 +103,8 @@
 				BE2357A62107E06400EE9D2C /* LoginViewControllers */,
 				BE2357A72107E0EA00EE9D2C /* HomeTableViewController.swift */,
 				BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */,
-				BE2357B42108E2DA00EE9D2C /* ProfileViewController.swift */,
+				BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */,
+				BE11E895210A82B5002CCD29 /* ContactsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 				BE90182C2106332B000800F4 /* Resources */,
 				65A2556885826DFC21502EA9 /* [CP] Embed Pods Frameworks */,
 				FED4F77231E85B09400EE641 /* [CP] Copy Pods Resources */,
+				BE11E894210A7A65002CCD29 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -296,6 +304,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -303,6 +312,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -310,6 +320,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BE11E894210A7A65002CCD29 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SideMenu.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		FED4F77231E85B09400EE641 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -341,11 +365,12 @@
 				BE23579F210783DB00EE9D2C /* LoginViewController.swift in Sources */,
 				BE2357AB2107E12A00EE9D2C /* DisplayHangoutViewController.swift in Sources */,
 				BE2357A1210794DC00EE9D2C /* StartViewController.swift in Sources */,
+				BE11E896210A82B5002CCD29 /* ContactsViewController.swift in Sources */,
 				BE6C72F52109259F004630D4 /* User.swift in Sources */,
 				BE6C72F921093A54004630D4 /* UserService.swift in Sources */,
 				BE6C72F721093777004630D4 /* FollowService.swift in Sources */,
 				BE9018322106332B000800F4 /* AppDelegate.swift in Sources */,
-				BE2357B52108E2DA00EE9D2C /* ProfileViewController.swift in Sources */,
+				BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */,
 				BE2357A3210794F700EE9D2C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +517,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P8F58SW4DA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/on-the-spot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -510,6 +540,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P8F58SW4DA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/on-the-spot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -285,7 +285,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="16" height="16"/>
+        <image name="Image" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="31u-qe-ZzT"/>

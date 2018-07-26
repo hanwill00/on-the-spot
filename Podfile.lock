@@ -43,6 +43,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SideMenu (4.0.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - FirebaseUI/Auth
+  - SideMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -65,6 +67,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - SideMenu
 
 SPEC CHECKSUMS:
   Firebase: 355bd535bfdacaa82a7fe8d9784115edefd6fc03
@@ -79,7 +82,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
 
-PODFILE CHECKSUM: e5e8cbf0bbc1af625607574df844d6bd0b9655b9
+PODFILE CHECKSUM: ed13e9a36b7ac4458d809391149ebfdb6fccefb0
 
 COCOAPODS: 1.5.3

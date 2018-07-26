@@ -12,12 +12,15 @@ import FirebaseAuth
 import FirebaseUI
 import FirebaseDatabase
 
-class ProfileViewController: UIViewController {
+class SideBarViewController: UIViewController {
     
     
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var LogoutButton: UIButton!
+    @IBOutlet weak var email: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
     }
     

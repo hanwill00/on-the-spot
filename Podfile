@@ -11,4 +11,5 @@ target 'on-the-spot' do
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'SideMenu'
 end
