@@ -10,7 +10,14 @@ import Foundation
 
 import UIKit
 
+protocol ContactTableViewCellDelegate: class {
+    func didTapFriendButton(_ FriendButton: UIButton, on cell: ContactTableViewCell)
+    
+}
+
 class ContactTableViewCell: UITableViewCell {
+    weak var delegate: ContactTableViewCellDelegate?
+    
     
     @IBOutlet var ContactName: UILabel!
     
@@ -31,6 +38,9 @@ class ContactTableViewCell: UITableViewCell {
         
     }
     
+    
+    
     @IBAction func friendButtonTapped(sender: UIButton) {
+        delegate?.didTapFriendButton(sender, on: self)
     }
 }

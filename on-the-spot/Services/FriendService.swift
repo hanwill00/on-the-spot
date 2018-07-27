@@ -57,7 +57,7 @@ struct FriendService {
         })
     }
     
-    static func setIsfriends(_ isFriends: Bool, fromCurrentUserTo friend: User, success: @escaping (Bool) -> Void) {
+    static func setIsFriends(_ isFriends: Bool, fromCurrentUserTo friend: User, success: @escaping (Bool) -> Void) {
         if isFriends {
             friendUser(friend, forCurrentUserWithSuccess: success)
         } else {

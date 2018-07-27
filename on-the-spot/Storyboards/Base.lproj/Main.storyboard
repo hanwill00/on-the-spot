@@ -260,7 +260,7 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="friendButtonTapped:" destination="ajg-uy-u5p" eventType="touchUpInside" id="Z6u-UW-Rt2"/>
+                                                        <action selector="friendButtonTappedWithSender:" destination="ajg-uy-u5p" eventType="touchUpInside" id="nP8-Dt-Sat"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

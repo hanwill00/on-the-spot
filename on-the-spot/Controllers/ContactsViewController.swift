@@ -47,6 +47,7 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell") as! ContactTableViewCell
+        cell.delegate = self as! ContactTableViewCellDelegate
         configure(cell: cell, atIndexPath: indexPath)
         
         return cell
@@ -57,5 +58,25 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.ContactName.text = user.name
         cell.FriendButton.isSelected = user.isFriended
+    }
+}
+
+extension ContactsViewController: ContactTableViewCellDelegate {
+    func didTapFriendButton(_ FriendButton: UIButton, on cell: ContactTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        FriendButton.isUserInteractionEnabled = false
+        let friend = users[indexPath.row]
+        
+        FriendService.setIsFriends(!friend.isFriended, fromCurrentUserTo: friend) { (success) in
+            defer {
+                FriendButton.isUserInteractionEnabled = true
+            }
+            
+            guard success else { return }
+            
+            friend.isFriended = !friend.isFriended
+            self.tableView.reloadRows(at: [indexPath], with: .none)
+        }
     }
 }
