@@ -31,10 +31,25 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    
+    
     @IBAction func loginAction(_ sender: Any) {
         
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil{
+                print("lel1")
+                if let user = Auth.auth().currentUser {
+                    print("lel2")
+                    let rootRef = Database.database().reference()
+                    let userRef = rootRef.child("users").child(user.uid)
+                    userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+                        print(snapshot)
+                        if let user = User(snapshot: snapshot) {
+                            User.setCurrent(user)
+                            print("lel4")
+                        }
+                    })
+                }
                 self.performSegue(withIdentifier: "loginToHome", sender: self)
             }
             else{

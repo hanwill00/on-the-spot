@@ -11,6 +11,12 @@ import UIKit
 
 class DisplayHangoutViewController: UIViewController {
     
+    @IBOutlet weak var hangoutName: UITextField!
+    
+    @IBOutlet weak var maxCap: UITextField!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

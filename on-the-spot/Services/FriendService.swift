@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-struct FollowService {
+struct FriendService {
     private static func friendUser(_ user: User, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
         let currentUID = User.current.uid
         let friendData = ["friends/\(user.uid)/\(currentUID)" : true,
@@ -42,6 +42,19 @@ struct FollowService {
             // 3
             success(error == nil)
         }
+    }
+    
+    static func isUserFriended(_ user: User, byCurrentUserWithCompletion completion: @escaping (Bool) -> Void) {
+        let currentUID = User.current.uid
+        let ref = Database.database().reference().child("friends").child(user.uid)
+        
+        ref.queryEqual(toValue: nil, childKey: currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? [String : Bool] {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        })
     }
     
     static func setIsfriends(_ isFriends: Bool, fromCurrentUserTo friend: User, success: @escaping (Bool) -> Void) {

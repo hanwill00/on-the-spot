@@ -15,6 +15,7 @@ class User {
     
     let uid: String
     let name: String
+    var isFriended = false
     
     // MARK: - Init
     

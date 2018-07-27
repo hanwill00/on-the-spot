@@ -285,10 +285,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="25" height="25"/>
+        <image name="Image" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="31u-qe-ZzT"/>
-        <segue reference="Vhw-Sj-wUB"/>
+        <segue reference="k4W-ls-P7x"/>
+        <segue reference="U7K-Lc-R1e"/>
     </inferredMetricsTieBreakers>
 </document>
