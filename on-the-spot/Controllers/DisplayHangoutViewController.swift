@@ -11,6 +11,8 @@ import UIKit
 
 class DisplayHangoutViewController: UIViewController {
     
+    var friends = [User]()
+    
     @IBOutlet weak var hangoutName: UITextField!
     
     @IBOutlet weak var maxCap: UITextField!
@@ -19,6 +21,18 @@ class DisplayHangoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        FriendService.getFriends { [unowned self] (friends) in
+            self.friends = friends
+            print(friends)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

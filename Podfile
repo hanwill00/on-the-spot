@@ -12,4 +12,5 @@ target 'on-the-spot' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'SideMenu'
+   pod 'SwiftyJSON', '~> 4.0'
 end

@@ -26,9 +26,8 @@ class ContactsViewController: UIViewController {
         super.viewWillAppear(animated)
 
         UserService.usersExcludingCurrentUser { [unowned self] (users) in
-            print(users)
             self.users = users
-            
+            print(users)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

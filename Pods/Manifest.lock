@@ -44,6 +44,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - SideMenu (4.0.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Auth
   - SideMenu
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -68,6 +70,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - SideMenu
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Firebase: 355bd535bfdacaa82a7fe8d9784115edefd6fc03
@@ -83,7 +86,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: ed13e9a36b7ac4458d809391149ebfdb6fccefb0
+PODFILE CHECKSUM: 579d42228ae2b1b8716c0de08db2857c87d8878e
 
 COCOAPODS: 1.5.3

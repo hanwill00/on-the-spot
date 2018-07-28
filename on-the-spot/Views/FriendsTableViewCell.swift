@@ -13,4 +13,6 @@ class FriendsTableViewCell: UITableViewCell {
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var selectButton: UIButton!
     
+    
+    
 }

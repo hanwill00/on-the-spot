@@ -47,9 +47,7 @@ struct UserService {
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
             
-            // 3
             let users = snapshot.compactMap(User.init).filter { $0.uid != currentUser.uid }
-            
             // 4
             let dispatchGroup = DispatchGroup()
             users.forEach { (user) in
