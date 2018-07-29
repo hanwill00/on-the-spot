@@ -40,3 +40,23 @@ class DisplayHangoutViewController: UIViewController {
     }
     
 }
+
+extension DisplayHangoutViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friends.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCell") as! FriendsTableViewCell
+        configure(cell: cell, atIndexPath: indexPath)
+        
+        return cell
+    }
+    
+    func configure(cell: FriendsTableViewCell, atIndexPath indexPath: IndexPath) {
+        let friend = friends[indexPath.row]
+        
+        cell.friendName.text = friend.name
+//        cell.selectButton.isSelected = user.isFriended
+    }
+}

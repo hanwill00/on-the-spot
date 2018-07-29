@@ -8,15 +8,24 @@
 
 import Foundation
 import UIKit
+import SideMenu
 
 class ContactsViewController: UIViewController {
     
     var users = [User]()
 
     
+    @IBOutlet weak var HamburgerMenuButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
+//        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "SideBarViewController") as! UISideMenuNavigationController
+//        // UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration
+//        // of it here like setting its viewControllers. If you're using storyboards, you'll want to do something like:
+//        // let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+//        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        
+        
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 71
@@ -37,6 +46,11 @@ class ContactsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func HamburgerMenuButtonTapped(_ sender: UIBarButtonItem) {
+//        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
+    
 }
 
 extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -58,6 +72,8 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.ContactName.text = user.name
         cell.FriendButton.isSelected = user.isFriended
     }
+    
+    
 }
 
 extension ContactsViewController: ContactTableViewCellDelegate {

@@ -12,6 +12,8 @@
 		BE11E896210A82B5002CCD29 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E895210A82B5002CCD29 /* ContactsViewController.swift */; };
 		BE11E899210A8713002CCD29 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E898210A8713002CCD29 /* ContactTableViewCell.swift */; };
 		BE11E89C210B962D002CCD29 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89B210B962D002CCD29 /* FriendsTableViewCell.swift */; };
+		BE11E89E210E38CA002CCD29 /* HangoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89D210E38CA002CCD29 /* HangoutService.swift */; };
+		BE11E8A0210E39A5002CCD29 /* Hangout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89F210E39A5002CCD29 /* Hangout.swift */; };
 		BE23579B21069EFB00EE9D2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE23579A21069EFB00EE9D2C /* GoogleService-Info.plist */; };
 		BE23579D2107839000EE9D2C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE23579C2107839000EE9D2C /* Login.storyboard */; };
 		BE23579F210783DB00EE9D2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE23579E210783DB00EE9D2C /* LoginViewController.swift */; };
@@ -39,6 +41,8 @@
 		BE11E895210A82B5002CCD29 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		BE11E898210A8713002CCD29 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		BE11E89B210B962D002CCD29 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		BE11E89D210E38CA002CCD29 /* HangoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangoutService.swift; sourceTree = "<group>"; };
+		BE11E89F210E39A5002CCD29 /* Hangout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangout.swift; sourceTree = "<group>"; };
 		BE23579A21069EFB00EE9D2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE23579C2107839000EE9D2C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BE23579E210783DB00EE9D2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				BE6C72F42109259F004630D4 /* User.swift */,
+				BE11E89F210E39A5002CCD29 /* Hangout.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				BE6C72F621093777004630D4 /* FriendService.swift */,
+				BE11E89D210E38CA002CCD29 /* HangoutService.swift */,
 				BE6C72F821093A54004630D4 /* UserService.swift */,
 			);
 			path = Services;
@@ -382,6 +388,8 @@
 				BE9018322106332B000800F4 /* AppDelegate.swift in Sources */,
 				BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */,
 				BE2357A3210794F700EE9D2C /* SignUpViewController.swift in Sources */,
+				BE11E8A0210E39A5002CCD29 /* Hangout.swift in Sources */,
+				BE11E89E210E38CA002CCD29 /* HangoutService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@ import FirebaseDatabase
 class SideBarViewController: UIViewController {
     
     
+    @IBOutlet weak var contactsbutton: UIButton!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var LogoutButton: UIButton!
     @IBOutlet weak var email: UILabel!
@@ -39,7 +40,18 @@ class SideBarViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let initial = storyboard.instantiateInitialViewController()
         UIApplication.shared.keyWindow?.rootViewController = initial
+        self.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func contactsButtonTapped(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "sidebarToContacts", sender: nil)
+        
+    }
+    
+    
+    @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
+        
+    }
     
 }

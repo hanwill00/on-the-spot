@@ -31,6 +31,18 @@ class StartViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
+            if let user = Auth.auth().currentUser {
+                print("lel2")
+                let rootRef = Database.database().reference()
+                let userRef = rootRef.child("users").child(user.uid)
+                userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+                    print(snapshot)
+                    if let user = User(snapshot: snapshot) {
+                        User.setCurrent(user)
+                        print("lel4")
+                    }
+                })
+            }
             self.performSegue(withIdentifier: "alreadyLoggedIn", sender: nil)
         }
     }

@@ -41,12 +41,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwe-Gz-DBW">
-                                <rect key="frame" x="31" y="217" width="62" height="30"/>
+                                <rect key="frame" x="28" y="282" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Contacts"/>
                                 <connections>
-                                    <segue destination="zem-n6-f6c" kind="show" id="e7P-UE-VcY"/>
+                                    <action selector="contactsButtonTapped:" destination="ExN-Tq-Rgl" eventType="touchUpInside" id="gv5-EE-HK3"/>
+                                    <segue destination="zem-n6-f6c" kind="show" identifier="sidebarToContacts" id="nXk-Tg-4Tt"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iw-WB-o4f">
+                                <rect key="frame" x="26" y="244" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hangouts"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,6 +61,7 @@
                     <navigationItem key="navigationItem" id="cgJ-me-arf"/>
                     <connections>
                         <outlet property="LogoutButton" destination="RY0-nj-0gJ" id="Dth-9v-GFi"/>
+                        <outlet property="contactsbutton" destination="uwe-Gz-DBW" id="NTr-nA-4hF"/>
                         <outlet property="email" destination="Ho1-PB-qgh" id="BLG-Jc-Drg"/>
                         <outlet property="name" destination="iwo-Yu-gzv" id="Ma1-T4-IVK"/>
                     </connections>
@@ -140,7 +147,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eQQ-mu-vZK" customClass="FriendsTableViewCell" customModule="on_the_spot" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsTableViewCell" id="eQQ-mu-vZK" customClass="FriendsTableViewCell" customModule="on_the_spot" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eQQ-mu-vZK" id="kOW-Gg-hdS">
@@ -148,14 +155,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyy-j6-ocP">
-                                                    <rect key="frame" x="25" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="23" y="11" width="164" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhk-af-v1x">
-                                                    <rect key="frame" x="226" y="11" width="46" height="30"/>
+                                                    <rect key="frame" x="242" y="6" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                 </button>
@@ -167,6 +174,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lQ5-RP-E3W" id="wUh-4p-9cA"/>
+                                    <outlet property="delegate" destination="lQ5-RP-E3W" id="F12-dT-cHJ"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQo-cN-cM9">
                                 <rect key="frame" x="16" y="211" width="79" height="27"/>
@@ -295,8 +306,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="249-AA-e0P"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Contacts" id="hu0-OS-ozP"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="hu0-OS-ozP">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Image-1" id="rbC-lE-K5z">
+                            <connections>
+                                <action selector="HamburgerMenuButtonTapped:" destination="fpL-QV-K3J" id="7EK-3L-TFN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="HamburgerMenuButton" destination="rbC-lE-K5z" id="foD-Yx-QkW"/>
                         <outlet property="tableView" destination="pP1-zO-lTf" id="KBC-yQ-sBJ"/>
                     </connections>
                 </viewController>
