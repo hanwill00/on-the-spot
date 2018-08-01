@@ -31,6 +31,9 @@ class FriendsTableViewCell: UITableViewCell {
         selectButton.layer.borderWidth = 1
         selectButton.layer.cornerRadius = 6
         selectButton.clipsToBounds = true
+        
+        selectButton.setTitle("Select", for: .normal)
+        selectButton.setTitle("Selected", for: .selected)
     }
     
     

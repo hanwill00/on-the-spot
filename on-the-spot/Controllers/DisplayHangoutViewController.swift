@@ -99,8 +99,17 @@ extension DisplayHangoutViewController: UITableViewDataSource, UITableViewDelega
         let index = selectButton.tag
         
         let friend = friends[index]
-        invitedFriends[friend.uid] = true
+        if invitedFriends[friend.uid] == true {
+            invitedFriends[friend.uid] = nil
+            selectButton.isSelected = false
+        } else {
+            invitedFriends[friend.uid] = true
+            selectButton.isSelected = true
+        }
+
     }
+    
+    
     
 }
 
