@@ -202,6 +202,7 @@
                                     <barButtonItem title="Send" id="G6h-5Q-LEn">
                                         <connections>
                                             <action selector="sendButtonTapped:" destination="lQ5-RP-E3W" id="fJ5-FY-Vie"/>
+                                            <segue destination="MRy-T2-7kJ" kind="unwind" unwindAction="unwindWithSegue:" id="eKA-v8-eG5"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -218,6 +219,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjc-kT-yfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MRy-T2-7kJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2584.8000000000002" y="252.32383808095955"/>
         </scene>
