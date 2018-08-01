@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class HomeTableViewController: UITableViewController {
+    var hangouts = [Hangout]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,17 +20,34 @@ class HomeTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        HangoutService.getUserHangouts { [unowned self] (hangouts) in
+            self.hangouts = hangouts
+            print(hangouts)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 1
-        return 10
+//        return hangouts.count
+        return 10;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 2
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath)
-        cell.textLabel?.text = "Cell Row: \(indexPath.row) Section: \(indexPath.section)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+//        configure(cell: cell, atIndexPath: indexPath)
+
         
         return cell
     }
+    
+//    func configure(cell: HomeTableViewCell, atIndexPath indexPath: IndexPath) {
+//        let hangout = hangouts[indexPath.row]
+//        cell.hangoutName.text = hangout.name
+//    }
     
 }

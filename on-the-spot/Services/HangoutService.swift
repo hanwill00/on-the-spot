@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseUI
 import FirebaseStorage
 import FirebaseDatabase
+import SwiftyJSON
 
 struct HangoutService {
     static func create(for name: String, maxCap: Int, invitedFriends: [String: Bool], completion: @escaping (Hangout?) -> ()) {
@@ -56,27 +59,10 @@ struct HangoutService {
                     })
                 }
                 
-                    //reference refers to hangout key
                 
-                    //hangouRef = hangout key under hangouts
-                  //  let hangoutRef = Database.database().reference().child("hangouts").child(hangout.key!)
-//                    hangoutRef.updateChildValues(dict) { (error, reference) in
-//                        if let error = error {
-//                            assertionFailure("there was an error: \(error.localizedDescription)")
-//                        } else {
-//                            completion(hangout)
-//                        }
-//                    }
-//                    hangoutRef.updateChildValues(invitedFriends) { (error, reference) in
-//                        if let error = error {
-//                            assertionFailure("there was an error: \(error.localizedDescription)")
-//                        } else {
-//                            completion(hangout)
-//                        }
-//                    }
-                }
             }
         }
+    }
         
         //Updating hangout information under hangout key
         
@@ -84,6 +70,45 @@ struct HangoutService {
     
     static func inviteFriend(user: User, hangout: Hangout, completion: @escaping (Hangout?) -> ()) {
         //let ref = Database.database().reference().child("hangouts").child(hangout.key)
+    }
+
+    static func getUserHangouts(completion: @escaping ([Hangout]) -> Void) {
+        let currentUser = User.current
+        let ref = Database.database().reference().child("users").child(currentUser.uid).child("hangouts")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+//
+//                else {return completion([])}
+            let value = snapshot.value
+            let json = JSON(value)
+            var hangoutKeys = [String]()
+            for (key, subJson) in json {
+                print(key)
+                hangoutKeys.append(key)
+            }
+            let dg = DispatchGroup()
+            var usersHangouts = [Hangout]()
+            //key is all of the hangouts under currentUser.uid
+            hangoutKeys.forEach({ (key) in
+                dg.enter()
+                let ref = Database.database().reference().child("Hangouts").child(key)
+                ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//                    guard let snapshot = snapshot else { return }
+//                    let maxCapSnapshot = snapshot[2] as? String : Any
+//                    let maxCap = maxCapSnapshot["maxCap"]
+//                    let nameSnapshot = snapshot[3]
+//                    let name = nameSnapshot["name"]
+                    
+                    let hangout = Hangout(snapshot: snapshot)
+                    usersHangouts.append(hangout!)
+                    dg.leave()
+                })
+                dg.notify(queue: .main, execute: {
+                    completion(usersHangouts)
+                })
+
+            })
+        })
     }
 
     //isInvited function returning bool

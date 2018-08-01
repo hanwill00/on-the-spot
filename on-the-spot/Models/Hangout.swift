@@ -32,4 +32,14 @@ class Hangout {
         self.maxCap = maxCap
         self.creationDate = Date()
     }
+    
+    init?(snapshot: DataSnapshot) {
+        print(snapshot)
+        guard let dict = snapshot.value as? [String : AnyObject] else { return nil }
+
+        self.maxCap = dict["maxCap"] as! Int
+        self.name = dict["name"] as! String
+        self.admin = User.current.uid
+        self.creationDate = Date()
+    }
 }

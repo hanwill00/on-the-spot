@@ -81,7 +81,7 @@ extension DisplayHangoutViewController: UITableViewDataSource, UITableViewDelega
         let friend = friends[indexPath.row]
         
         cell.friendName.text = friend.name
-//        cell.selectButton.isSelected = user.isFriended
+//      cell.selectButton.isSelected = user.isFriended
     }
     
     @objc func didTapSelectButton(_ selectButton: UIButton) {

@@ -46,7 +46,7 @@ struct UserService {
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
-            
+            print(snapshot)
             let users = snapshot.compactMap(User.init).filter { $0.uid != currentUser.uid }
             // 4
             let dispatchGroup = DispatchGroup()
