@@ -24,6 +24,9 @@ class SignupViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
         super.viewDidLoad()
     }
     
@@ -42,6 +45,15 @@ class SignupViewController: UIViewController {
                 UserService.create(firUser, name: name) { (user) in
                     guard let user = user else { return }
                 }
+                let rootRef = Database.database().reference()
+                let userRef = rootRef.child("users").child(firUser.uid)
+                userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+                    print(snapshot)
+                    if let firUser = User(snapshot: snapshot) {
+                        User.setCurrent(firUser)
+                        print("lel4")
+                    }
+                })
                 self.performSegue(withIdentifier: "signupToHome", sender: self)
                 
             }

@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var SignUpButton: UIButton!
     
     override func viewDidLoad() {
+        let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
         super.viewDidLoad()
     }
     

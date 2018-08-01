@@ -21,7 +21,9 @@ class SideBarViewController: UIViewController {
     @IBOutlet weak var email: UILabel!
     
     override func viewDidLoad() {
-        
+        let currentUser = User.current
+        name.text = currentUser.name
+//        email.text = currentUser.email
         super.viewDidLoad()
     }
     

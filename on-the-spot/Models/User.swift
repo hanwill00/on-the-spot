@@ -8,6 +8,8 @@
 
 import Foundation
 import FirebaseDatabase.FIRDataSnapshot
+import Firebase
+import FirebaseUI
 
 class User {
     
@@ -21,6 +23,7 @@ class User {
     
     init(uid: String, name: String) {
         self.uid = uid
+        
         self.name = name
     }
     

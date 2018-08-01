@@ -14,16 +14,20 @@ class Hangout {
     let name: String
     let maxCap: Int
     let creationDate: Date
+    var admin: String
+    
     
     var dictValue: [String : Any] {
         let createdAgo = creationDate.timeIntervalSince1970
         
         return ["name" : name,
                 "maxCap" : maxCap,
+                "admin" : admin,
                 "created_at" : createdAgo]
     }
     
     init(name: String, maxCap: Int) {
+        self.admin = User.current.uid
         self.name = name
         self.maxCap = maxCap
         self.creationDate = Date()
