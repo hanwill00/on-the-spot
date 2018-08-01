@@ -213,8 +213,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="z67-BG-zAc"/>
                                     <barButtonItem title="Send" id="G6h-5Q-LEn">
                                         <connections>
-                                            <action selector="sendButtonTapped:" destination="lQ5-RP-E3W" id="fJ5-FY-Vie"/>
-                                            <segue destination="MRy-T2-7kJ" kind="unwind" unwindAction="unwindWithSegue:" id="eKA-v8-eG5"/>
+                                            <action selector="sendButtonTapped:" destination="lQ5-RP-E3W" id="kWd-BN-b9d"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -228,6 +227,7 @@
                         <outlet property="maxCap" destination="J8j-Pb-qfp" id="tT7-sA-s99"/>
                         <outlet property="sendButton" destination="G6h-5Q-LEn" id="8Hh-Vh-SYK"/>
                         <outlet property="tableView" destination="meW-yz-ZnG" id="zJM-vu-ITg"/>
+                        <segue destination="MRy-T2-7kJ" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="k1f-bK-5rL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjc-kT-yfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

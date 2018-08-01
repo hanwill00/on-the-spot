@@ -56,7 +56,7 @@ class DisplayHangoutViewController: UIViewController {
             }
             
             HangoutService.create(for: hangoutName.text!, maxCap: intMaxCap, invitedFriends: invitedFriends, completion: myCompletionCodeToRunWhenCreateIsDone)
-            
+            self.performSegue(withIdentifier: "unwindToHome", sender: self)
         }
     }
 }
