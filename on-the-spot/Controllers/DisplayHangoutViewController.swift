@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class DisplayHangoutViewController: UIViewController {
-    
+    var hangout: Hangout?
     var friends = [User]()
     var invitedFriends = [String: Bool]()
     
@@ -31,7 +31,16 @@ class DisplayHangoutViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if let hangout = hangout {
+            // 2
+            hangoutName.text = hangout.name
+            maxCap.text = String(hangout.maxCap)
+        } else {
+            // 3
+            hangoutName.text = ""
+            maxCap.text = ""
+        }
+
         FriendService.getFriends { [unowned self] (friends) in
             self.friends = friends
             print(friends)
@@ -40,6 +49,7 @@ class DisplayHangoutViewController: UIViewController {
             }
         }
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,12 +61,11 @@ class DisplayHangoutViewController: UIViewController {
             
             let myCompletionCodeToRunWhenCreateIsDone: (Hangout?) -> () = { (hangout) in
                 guard let hangout = hangout else {return}
-
-                print(hangout)
+                self.performSegue(withIdentifier: "send", sender: self)
             }
             
             HangoutService.create(for: hangoutName.text!, maxCap: intMaxCap, invitedFriends: invitedFriends, completion: myCompletionCodeToRunWhenCreateIsDone)
-            self.performSegue(withIdentifier: "unwindToHome", sender: self)
+            
         }
     }
 }

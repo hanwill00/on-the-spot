@@ -46,7 +46,6 @@
                                 <state key="normal" title="Contacts"/>
                                 <connections>
                                     <action selector="contactsButtonTapped:" destination="ExN-Tq-Rgl" eventType="touchUpInside" id="gv5-EE-HK3"/>
-                                    <segue destination="zem-n6-f6c" kind="show" identifier="sidebarToContacts" id="nXk-Tg-4Tt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iw-WB-o4f">
@@ -64,6 +63,7 @@
                         <outlet property="contactsbutton" destination="uwe-Gz-DBW" id="NTr-nA-4hF"/>
                         <outlet property="email" destination="Ho1-PB-qgh" id="BLG-Jc-Drg"/>
                         <outlet property="name" destination="iwo-Yu-gzv" id="Ma1-T4-IVK"/>
+                        <segue destination="fpL-QV-K3J" kind="show" identifier="sidebarToContacts" id="Q6e-tY-kra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r59-Kd-4dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,6 +105,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="hangoutName" destination="VjO-sz-Xqy" id="LQA-IL-15a"/>
+                                    <segue destination="lQ5-RP-E3W" kind="show" identifier="displayHangout" id="u3M-Af-Vhn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -117,7 +118,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l7Y-OL-kjA">
                             <connections>
-                                <segue destination="lQ5-RP-E3W" kind="show" id="v0Y-6U-odc"/>
+                                <segue destination="lQ5-RP-E3W" kind="show" identifier="addHangout" id="v0Y-6U-odc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -227,7 +228,7 @@
                         <outlet property="maxCap" destination="J8j-Pb-qfp" id="tT7-sA-s99"/>
                         <outlet property="sendButton" destination="G6h-5Q-LEn" id="8Hh-Vh-SYK"/>
                         <outlet property="tableView" destination="meW-yz-ZnG" id="zJM-vu-ITg"/>
-                        <segue destination="MRy-T2-7kJ" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="k1f-bK-5rL"/>
+                        <segue destination="MRy-T2-7kJ" kind="unwind" identifier="send" unwindAction="unwindToHome:" id="TQW-tf-hl9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjc-kT-yfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,28 +356,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6b7-GH-DGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5634.3999999999996" y="-485.30734632683664"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="67n-eW-BTd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zem-n6-f6c" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WKm-Cz-Cm4">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="fpL-QV-K3J" kind="relationship" relationship="rootViewController" id="RA5-f2-sUm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xaZ-y1-rez" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4693.6000000000004" y="-485.30734632683664"/>
+            <point key="canvasLocation" x="4679" y="-528"/>
         </scene>
     </scenes>
     <resources>
         <image name="Image-1" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="u3M-Af-Vhn"/>
+    </inferredMetricsTieBreakers>
 </document>
