@@ -1,4 +1,4 @@
-//
+    //
 //  DisplayHangoutViewController.swift
 //  on-the-spot
 //

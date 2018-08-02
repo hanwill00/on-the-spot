@@ -66,8 +66,44 @@ struct HangoutService {
         
         //Updating hangout information under hangout key
         
-    
-    
+    static func delete(hangout: Hangout) {
+        let currentUser = User.current
+        if let hangoutKey = hangout.key {
+            //remove from hangouts tree
+            let hangoutRef = Database.database().reference().child("Hangouts").child(hangoutKey)
+            hangoutRef.removeValue() { error, _ in
+                print(error)
+            }
+            
+            //remove from each invited user's tree
+            hangoutRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+//                    else {return}
+                let jsonSnapshot = JSON(snapshot.value)
+                var userUIDs = [String]()
+                for (uid, subJson) in jsonSnapshot {
+                    print(uid)
+                    userUIDs.append(uid)
+                }
+                for userUID in userUIDs {
+                    //dispatchGroup.enter()
+                    let invitedUsersHangoutRef = Database.database().reference().child("users").child(userUID).child("hangouts").child(hangoutKey)
+                    invitedUsersHangoutRef.removeValue() { error, _ in
+                        print(error)
+                    }
+                    //dispatchGroup.leave()
+                }
+            })
+            
+            
+            //remove from currentUser tree
+            let usersHangoutRef = Database.database().reference().child("users").child(currentUser.uid).child("hangouts").child(hangoutKey)
+            usersHangoutRef.removeValue() { error, _ in
+                print(error)
+            }
+            
+        }
+    }
     static func inviteFriend(user: User, hangout: Hangout, completion: @escaping (Hangout?) -> ()) {
         //let ref = Database.database().reference().child("hangouts").child(hangout.key)
     }
@@ -79,10 +115,9 @@ struct HangoutService {
 //            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
 //
 //                else {return completion([])}
-            let value = snapshot.value
-            let json = JSON(value)
+            let jsonSnapshot = JSON(snapshot.value)
             var hangoutKeys = [String]()
-            for (key, subJson) in json {
+            for (key, subJson) in jsonSnapshot {
                 print(key)
                 hangoutKeys.append(key)
             }

@@ -120,7 +120,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "on-the-spot/Services/UserService.swift"
-            timestampString = "554839586.939715"
+            timestampString = "554923336.2578501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -136,7 +136,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "on-the-spot/Services/UserService.swift"
-            timestampString = "554839586.941155"
+            timestampString = "554923336.258051"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -424,7 +424,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "on-the-spot/Controllers/DisplayHangoutViewController.swift"
-            timestampString = "554859422.3692631"
+            timestampString = "554927177.081147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -440,7 +440,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "on-the-spot/Controllers/DisplayHangoutViewController.swift"
-            timestampString = "554859422.398223"
+            timestampString = "554927177.086527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "7"
@@ -456,7 +456,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "on-the-spot/Services/HangoutService.swift"
-            timestampString = "554859422.399402"
+            timestampString = "554927177.087323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -472,7 +472,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "on-the-spot/Services/HangoutService.swift"
-            timestampString = "554859422.399699"
+            timestampString = "554927177.088291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -519,13 +519,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.400205"
+            filePath = "on-the-spot/Services/HangoutService.swift"
+            timestampString = "554927177.0890729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "delete(hangout:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -535,61 +535,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.400522"
+            filePath = "on-the-spot/Services/HangoutService.swift"
+            timestampString = "554927177.089262"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "on_the_spot.StartViewController.viewDidAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "on-the-spot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Will/developer/on-the-spot/on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-                  timestampString = "554840341.508823"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "1104">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in on_the_spot.StartViewController.viewDidAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "on-the-spot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Will/developer/on-the-spot/on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-                  timestampString = "554840341.5118639"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.4007879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "delete(hangout:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -599,13 +551,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.40101"
+            filePath = "on-the-spot/Services/HangoutService.swift"
+            timestampString = "554927177.089451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "delete(hangout:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -615,13 +567,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.401144"
+            filePath = "on-the-spot/Services/HangoutService.swift"
+            timestampString = "554927177.089583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "delete(hangout:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -631,13 +583,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.401269"
+            filePath = "on-the-spot/AppDelegate.swift"
+            timestampString = "554927177.089808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -647,13 +599,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.40144"
+            filePath = "on-the-spot/AppDelegate.swift"
+            timestampString = "554927177.090026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "on-the-spot/AppDelegate.swift"
+            timestampString = "554927177.090266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "on-the-spot/AppDelegate.swift"
+            timestampString = "554927177.0905221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "on-the-spot/AppDelegate.swift"
+            timestampString = "554927177.090726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "viewDidAppear(_:)"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -663,13 +663,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.401601"
+            filePath = "on-the-spot/Controllers/HomeTableViewController.swift"
+            timestampString = "554927177.091123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -679,29 +679,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.401835"
+            filePath = "on-the-spot/Controllers/HomeTableViewController.swift"
+            timestampString = "554927177.0913661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "on-the-spot/Controllers/LoginViewControllers/StartViewController.swift"
-            timestampString = "554859422.401976"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

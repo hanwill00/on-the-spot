@@ -41,5 +41,6 @@ class Hangout {
         self.name = dict["name"] as! String
         self.admin = User.current.uid
         self.creationDate = Date()
+        self.key = snapshot.key
     }
 }

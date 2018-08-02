@@ -8,6 +8,11 @@
 
 import Foundation
 import UIKit
+import UIKit
+import FirebaseAuth
+import FirebaseUI
+import FirebaseDatabase
+
 
 class HomeTableViewController: UITableViewController {
     var hangouts = [Hangout]() {
@@ -24,15 +29,31 @@ class HomeTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        HangoutService.getUserHangouts { [unowned self] (hangouts) in
-            self.hangouts = hangouts
-            print(hangouts)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        
+        
+        if let user = Auth.auth().currentUser {
+            print(user)
+            let rootRef = Database.database().reference()
+            let userRef = rootRef.child("users").child(user.uid)
+            userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                print(snapshot)
+                if let user = User(snapshot: snapshot) {
+                    User.setCurrent(user)
+                    
+                    HangoutService.getUserHangouts { [unowned self] (hangouts) in
+                        self.hangouts = hangouts
+                        print(hangouts)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            })
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,6 +85,13 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return hangouts.count
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            HangoutService.delete(hangout: hangouts[indexPath.row])
+            hangouts.remove(at: indexPath.row)
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
