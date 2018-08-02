@@ -346,6 +346,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Image-1" id="rbC-lE-K5z">
                             <connections>
                                 <action selector="HamburgerMenuButtonTapped:" destination="fpL-QV-K3J" id="7EK-3L-TFN"/>
+                                <segue destination="Atz-Bv-pU4" kind="unwind" unwindAction="unwindToHome:" id="QCj-jQ-X8a"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -355,6 +356,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6b7-GH-DGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Item" image="Image-1" id="MSD-Ja-lbc">
+                    <connections>
+                        <action selector="HamburgerMenuButtonTapped:" destination="fpL-QV-K3J" id="MCL-KN-9HU"/>
+                    </connections>
+                </barButtonItem>
+                <exit id="Atz-Bv-pU4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4679" y="-528"/>
         </scene>
