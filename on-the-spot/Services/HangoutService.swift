@@ -24,6 +24,7 @@ struct HangoutService {
         
         let hangoutRef = Database.database().reference().child("Hangouts").childByAutoId()
         
+
         // Create reference to hangout in hangout tree
         hangoutRef.updateChildValues(dict) { (error, reference) in
             if let error = error {
@@ -47,6 +48,13 @@ struct HangoutService {
                     dg.enter()
                     let createdAndGoingData = ["created" : false,
                                                "going": false]
+                    //add each invitedfriend to invited friends
+                    let hangoutInvitedFriendsRef = hangoutRef.child("invites")
+                    hangoutInvitedFriendsRef.updateChildValues([key : true]) { (error, reference) in
+                        if let error = error {
+                            assertionFailure("Error:\(error.localizedDescription)")
+                        }
+                    }
                     let ref = Database.database().reference().child("users").child(key).child("hangouts").child(hangout.key!)
                     ref.updateChildValues(createdAndGoingData, withCompletionBlock: { (error, ref) in
                         if let error = error {
@@ -69,11 +77,8 @@ struct HangoutService {
     static func delete(hangout: Hangout) {
         let currentUser = User.current
         if let hangoutKey = hangout.key {
-            //remove from hangouts tree
-            let hangoutRef = Database.database().reference().child("Hangouts").child(hangoutKey)
-            hangoutRef.removeValue() { error, _ in
-                print(error)
-            }
+            //ref to hangout in hangout tree
+            let hangoutRef = Database.database().reference().child("Hangouts").child(hangoutKey).child("invites")
             
             //remove from each invited user's tree
             hangoutRef.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -81,19 +86,29 @@ struct HangoutService {
 //                    else {return}
                 let jsonSnapshot = JSON(snapshot.value)
                 var userUIDs = [String]()
-                for (uid, subJson) in jsonSnapshot {
-                    print(uid)
-                    userUIDs.append(uid)
+                print("PRINTING")
+                for (key, subJson) in jsonSnapshot {
+                    print(key)
+                    userUIDs.append(key)
                 }
+                
+                let dispatchGroup = DispatchGroup()
                 for userUID in userUIDs {
-                    //dispatchGroup.enter()
+                    dispatchGroup.enter()
                     let invitedUsersHangoutRef = Database.database().reference().child("users").child(userUID).child("hangouts").child(hangoutKey)
                     invitedUsersHangoutRef.removeValue() { error, _ in
                         print(error)
                     }
-                    //dispatchGroup.leave()
+                    dispatchGroup.leave()
                 }
+                
+                //remove from hangouts tree
+                hangoutRef.removeValue() { error, _ in
+                    print(error)
+                }
+
             })
+            
             
             
             //remove from currentUser tree
