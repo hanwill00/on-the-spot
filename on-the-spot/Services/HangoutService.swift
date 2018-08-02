@@ -160,6 +160,28 @@ struct HangoutService {
             })
         })
     }
+    
+    static func isInvited(_ user: User, hangout: Hangout, completion: @escaping (Bool) -> Void ) {
+        if let hangoutkey = hangout.key {
+            let hangoutRef = Database.database().reference().child("hangouts").child(hangout.key!).child("invites")
+            var userFound = false
+            hangoutRef.observeSingleEvent(of: .value) { (snapshot) in
+                let jsonSnapshot = JSON(snapshot.value)
+
+                for (key, subJson) in jsonSnapshot {
+                    if key == user.uid {
+                        userFound = true
+                         completion(userFound)
+                    }
+                }
+                completion(false)
+                
+            }
+           
+        }
+
+        
+    }
 
     //isInvited function returning bool
     //RSVP function -- pass in true or false (response)

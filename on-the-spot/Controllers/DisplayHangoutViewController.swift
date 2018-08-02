@@ -90,7 +90,11 @@ extension DisplayHangoutViewController: UITableViewDataSource, UITableViewDelega
         let friend = friends[indexPath.row]
         
         cell.friendName.text = friend.name
-//      cell.selectButton.isSelected = user.isFriended
+//        HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
+//            cell.selectButton.isSelected = isInvited
+//        }
+//        
+        
     }
     
     @objc func didTapSelectButton(_ selectButton: UIButton) {
