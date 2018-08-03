@@ -43,7 +43,7 @@ class HomeTableViewController: UITableViewController {
                 if let user = User(snapshot: snapshot) {
                     User.setCurrent(user)
                     
-                    HangoutService.getUserHangouts { [unowned self] (hangouts) in
+                    HangoutService.getUserCreatedHangouts { [unowned self] (hangouts) in
                         self.hangouts = hangouts
                         print(hangouts)
                         DispatchQueue.main.async {
