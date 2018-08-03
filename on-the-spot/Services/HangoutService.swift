@@ -279,7 +279,7 @@ struct HangoutService {
                 for (key, subJson) in jsonSnapshot {
                     if key == user.uid {
                         userFound = true
-                         completion(userFound)
+                        completion(userFound)
                     }
                 }
                 completion(false)

@@ -15,7 +15,18 @@ import FirebaseDatabase
 
 
 class HomeTableViewController: UITableViewController {
-    var hangouts = [Hangout]() {
+    
+    
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    var createdHangouts = [Hangout]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var invitedHangouts = [Hangout]() {
         didSet {
             tableView.reloadData()
         }
@@ -44,8 +55,16 @@ class HomeTableViewController: UITableViewController {
                     User.setCurrent(user)
                     
                     HangoutService.getUserCreatedHangouts { [unowned self] (hangouts) in
-                        self.hangouts = hangouts
-                        print(hangouts)
+                        self.createdHangouts = hangouts
+                        print(self.createdHangouts)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                    
+                    HangoutService.getUserInvitedHangouts { [unowned self] (hangouts) in
+                        self.invitedHangouts = hangouts
+                        print(self.invitedHangouts)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -64,12 +83,20 @@ class HomeTableViewController: UITableViewController {
             // 1
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
+
             // 2
-            let hangout = hangouts[indexPath.row]
-            // 3
-            let destination = segue.destination as! DisplayHangoutViewController
-            // 4
-            destination.hangout = hangout
+            if segmentedControl.selectedSegmentIndex == 0 {
+                let hangout = createdHangouts[indexPath.row]
+                let destination = segue.destination as! DisplayHangoutViewController
+                destination.hangout = hangout
+            } else if segmentedControl.selectedSegmentIndex == 1 {
+                let hangout = invitedHangouts[indexPath.row]
+                let destination = segue.destination as! DisplayHangoutViewController
+                destination.hangout = hangout
+            }
+            
+
+            
             
         case "addNote":
             print("create note bar button item tapped")
@@ -79,18 +106,35 @@ class HomeTableViewController: UITableViewController {
         }
     }
     
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        tableView.reloadData()
+    }
+    
     @IBAction func unwindToHome(_ segue: UIStoryboardSegue) {
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hangouts.count
+        if segmentedControl.selectedSegmentIndex == 0 {
+            return createdHangouts.count
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            return invitedHangouts.count
+        } else {
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            HangoutService.delete(hangout: hangouts[indexPath.row])
-            hangouts.remove(at: indexPath.row)
+            if segmentedControl.selectedSegmentIndex == 0 {
+                HangoutService.delete(hangout: createdHangouts[indexPath.row])
+                createdHangouts.remove(at: indexPath.row)
+            } else if segmentedControl.selectedSegmentIndex == 1 {
+                HangoutService.delete(hangout: invitedHangouts[indexPath.row])
+                invitedHangouts.remove(at: indexPath.row)
+            }
+
         }
     }
     
@@ -103,11 +147,23 @@ class HomeTableViewController: UITableViewController {
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // check which segent is selected
+        // segue to a different vc based on the segment
+        
+    }
     
     func configure(cell: HomeTableViewCell, atIndexPath indexPath: IndexPath) {
-        let hangout = hangouts[indexPath.row]
-        cell.hangoutName.text = hangout.name
+        if segmentedControl.selectedSegmentIndex == 0 {
+            let hangout = createdHangouts[indexPath.row]
+            cell.hangoutName.text = hangout.name
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            let hangout = invitedHangouts[indexPath.row]
+            cell.hangoutName.text = hangout.name
+        }
+
+        
+        
     }
     
 }

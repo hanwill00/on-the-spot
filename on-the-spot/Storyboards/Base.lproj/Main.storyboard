@@ -82,9 +82,12 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="Hangouts I'm Invited to"/>
-                                <segment title="Hangouts I've Created"/>
+                                <segment title="Created"/>
+                                <segment title="Invited"/>
                             </segments>
+                            <connections>
+                                <action selector="segmentedControlChanged:" destination="uan-zy-4eS" eventType="valueChanged" id="4pl-Mb-Cth"/>
+                            </connections>
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" id="zlV-M8-A4F" customClass="HomeTableViewCell" customModule="on_the_spot" customModuleProvider="target">
@@ -122,6 +125,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="u4M-11-FMR" id="guv-Ia-Xrq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLX-ND-Wu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
