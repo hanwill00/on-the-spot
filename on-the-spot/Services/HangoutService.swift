@@ -269,6 +269,20 @@ struct HangoutService {
         })
     }
     
+    static func getGoingFriends(_ hangout: Hangout, completion: @escaping ([User]) -> Void) {
+        
+        let hangoutRef = Database.database().reference().child("hangouts").child(hangout.key!).child("invites")
+        
+        hangoutRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let jsonSnapshot = JSON(snapshot.value)
+            var userUIDs = [String]()
+            for (key, _) in jsonSnapshot {
+                userUIDs.append(key)
+            }
+        })
+        
+    }
+    
     static func isInvited(_ user: User, hangout: Hangout, completion: @escaping (Bool) -> Void ) {
         if let hangoutkey = hangout.key {
             let hangoutRef = Database.database().reference().child("hangouts").child(hangout.key!).child("invites")

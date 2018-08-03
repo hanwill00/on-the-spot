@@ -79,24 +79,20 @@ class HomeTableViewController: UITableViewController {
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
-        case "displayHangout":
+        case "displayCreatedHangout":
             // 1
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let hangout = createdHangouts[indexPath.row]
+            let destination = segue.destination as! DisplayCreatedHangoutViewController
+            destination.hangout = hangout
             
+        case "displayInvitedHangout":
+            // 1
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let hangout = invitedHangouts[indexPath.row]
+            let destination = segue.destination as! DisplayInvitedHangoutViewController
+            destination.hangout = hangout
 
-            // 2
-            if segmentedControl.selectedSegmentIndex == 0 {
-                let hangout = createdHangouts[indexPath.row]
-                let destination = segue.destination as! DisplayHangoutViewController
-                destination.hangout = hangout
-            } else if segmentedControl.selectedSegmentIndex == 1 {
-                let hangout = invitedHangouts[indexPath.row]
-                let destination = segue.destination as! DisplayHangoutViewController
-                destination.hangout = hangout
-            }
-            
-
-            
             
         case "addNote":
             print("create note bar button item tapped")
@@ -148,7 +144,13 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // check which segent is selected
+        // check which segment is selected
+        if segmentedControl.selectedSegmentIndex == 0 {
+            self.performSegue(withIdentifier: "displayCreatedHangout", sender: self)
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            self.performSegue(withIdentifier: "displayInvitedHangout", sender: self)
+        }
+        
         // segue to a different vc based on the segment
         
     }

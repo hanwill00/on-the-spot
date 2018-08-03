@@ -20,7 +20,7 @@
 		BE2357A1210794DC00EE9D2C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357A0210794DC00EE9D2C /* StartViewController.swift */; };
 		BE2357A3210794F700EE9D2C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357A2210794F700EE9D2C /* SignUpViewController.swift */; };
 		BE2357A82107E0EA00EE9D2C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357A72107E0EA00EE9D2C /* HomeTableViewController.swift */; };
-		BE2357AB2107E12A00EE9D2C /* DisplayHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */; };
+		BE2357AB2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AA2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift */; };
 		BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */; };
 		BE2357AF2107F07000EE9D2C /* HomeTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */; };
 		BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */; };
@@ -31,6 +31,8 @@
 		BE9018372106332B000800F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9018352106332B000800F4 /* Main.storyboard */; };
 		BE90183921063333000800F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE90183821063333000800F4 /* Assets.xcassets */; };
 		BE90183C21063333000800F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE90183A21063333000800F4 /* LaunchScreen.storyboard */; };
+		BEB5D0842114C9AC00613439 /* DisplayInvitedHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5D0832114C9AC00613439 /* DisplayInvitedHangoutViewController.swift */; };
+		BEB5D0862114F5F400613439 /* DisplayCreatedHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5D0852114F5F400613439 /* DisplayCreatedHangoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +51,7 @@
 		BE2357A0210794DC00EE9D2C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		BE2357A2210794F700EE9D2C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BE2357A72107E0EA00EE9D2C /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayHangoutViewController.swift; sourceTree = "<group>"; };
+		BE2357AA2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAddHangoutViewController.swift; sourceTree = "<group>"; };
 		BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTableViewCell.storyboard; sourceTree = "<group>"; };
 		BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		BE90183821063333000800F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE90183B21063333000800F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE90183D21063333000800F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEB5D0832114C9AC00613439 /* DisplayInvitedHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInvitedHangoutViewController.swift; sourceTree = "<group>"; };
+		BEB5D0852114F5F400613439 /* DisplayCreatedHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCreatedHangoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +114,9 @@
 			children = (
 				BE2357A62107E06400EE9D2C /* LoginViewControllers */,
 				BE2357A72107E0EA00EE9D2C /* HomeTableViewController.swift */,
-				BE2357AA2107E12A00EE9D2C /* DisplayHangoutViewController.swift */,
+				BE2357AA2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift */,
+				BEB5D0832114C9AC00613439 /* DisplayInvitedHangoutViewController.swift */,
+				BEB5D0852114F5F400613439 /* DisplayCreatedHangoutViewController.swift */,
 				BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */,
 				BE11E895210A82B5002CCD29 /* ContactsViewController.swift */,
 			);
@@ -379,7 +385,7 @@
 				BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */,
 				BE11E89C210B962D002CCD29 /* FriendsTableViewCell.swift in Sources */,
 				BE23579F210783DB00EE9D2C /* LoginViewController.swift in Sources */,
-				BE2357AB2107E12A00EE9D2C /* DisplayHangoutViewController.swift in Sources */,
+				BE2357AB2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift in Sources */,
 				BE2357A1210794DC00EE9D2C /* StartViewController.swift in Sources */,
 				BE11E896210A82B5002CCD29 /* ContactsViewController.swift in Sources */,
 				BE6C72F52109259F004630D4 /* User.swift in Sources */,
@@ -387,7 +393,9 @@
 				BE6C72F721093777004630D4 /* FriendService.swift in Sources */,
 				BE9018322106332B000800F4 /* AppDelegate.swift in Sources */,
 				BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */,
+				BEB5D0862114F5F400613439 /* DisplayCreatedHangoutViewController.swift in Sources */,
 				BE2357A3210794F700EE9D2C /* SignUpViewController.swift in Sources */,
+				BEB5D0842114C9AC00613439 /* DisplayInvitedHangoutViewController.swift in Sources */,
 				BE11E8A0210E39A5002CCD29 /* Hangout.swift in Sources */,
 				BE11E89E210E38CA002CCD29 /* HangoutService.swift in Sources */,
 			);

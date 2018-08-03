@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DisplayHangoutViewController: UIViewController {
+class DisplayAddHangoutViewController: UIViewController {
     var hangout: Hangout?
     var friends = [User]()
     var invitedFriends = [String: Bool]()
@@ -70,7 +70,7 @@ class DisplayHangoutViewController: UIViewController {
     }
 }
 
-extension DisplayHangoutViewController: UITableViewDataSource, UITableViewDelegate {
+extension DisplayAddHangoutViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
