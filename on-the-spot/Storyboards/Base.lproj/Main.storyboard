@@ -474,8 +474,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="qdQ-Uh-aIf" id="zBQ-Sm-nFj"/>
-                                    <outlet property="delegate" destination="qdQ-Uh-aIf" id="tgx-dX-aso"/>
+                                    <outlet property="dataSource" destination="qdQ-Uh-aIf" id="qg3-Op-frm"/>
+                                    <outlet property="delegate" destination="qdQ-Uh-aIf" id="MgM-q3-4uG"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3f-x7-rrB">
@@ -496,10 +496,9 @@
                     </view>
                     <connections>
                         <outlet property="RSVPButton" destination="udS-jb-LEP" id="r1E-PA-21Y"/>
-                        <outlet property="goingTableView" destination="kaw-El-eGo" id="FXF-qa-FkJ"/>
                         <outlet property="hangoutName" destination="TXS-MC-OCC" id="IUz-pI-6Y0"/>
-                        <outlet property="invitedTableView" destination="rNo-wY-Erc" id="FjI-Fs-Q0D"/>
                         <outlet property="maxCap" destination="k49-v0-zZb" id="tEP-cP-Yr0"/>
+                        <outlet property="tableView" destination="rNo-wY-Erc" id="e03-Rb-v9j"/>
                         <segue destination="PIl-DC-xwX" kind="unwind" identifier="send" unwindAction="unwindToHome:" id="bNa-qq-lsM"/>
                     </connections>
                 </viewController>
@@ -577,8 +576,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="qdQ-Uh-aIf" id="rJX-Sp-S61"/>
-                                    <outlet property="delegate" destination="qdQ-Uh-aIf" id="xeW-qu-QZa"/>
+                                    <outlet property="dataSource" destination="a45-WD-t7o" id="Pi8-3m-zoz"/>
+                                    <outlet property="delegate" destination="a45-WD-t7o" id="Hh8-PS-IBC"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Going" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imb-Ww-ncr">

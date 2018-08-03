@@ -21,10 +21,8 @@
         
         @IBOutlet weak var RSVPButton: UIButton!
         
-        @IBOutlet weak var goingTableView: UITableView!
         
-        @IBOutlet weak var invitedTableView: UITableView!
-        
+        @IBOutlet weak var tableView: UITableView!
         
         override func viewDidLoad() {
             let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
@@ -49,12 +47,12 @@
                 self.friends = friends
                 print(friends)
                 DispatchQueue.main.async {
-//                    self.tableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
-            HangoutService.getGoingFriends(hangout!) { [unowned self] (goingFriends) in
-                self.goingFriends = goingFriends
-            }
+//            HangoutService.getGoingFriends(hangout!) { [unowned self] (goingFriends) in
+//                self.goingFriends = goingFriends
+//            }
         }
         
         
