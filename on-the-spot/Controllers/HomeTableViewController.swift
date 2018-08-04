@@ -122,16 +122,13 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            if segmentedControl.selectedSegmentIndex == 0 {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            if editingStyle == .delete {
                 HangoutService.delete(hangout: createdHangouts[indexPath.row])
                 createdHangouts.remove(at: indexPath.row)
-            } else if segmentedControl.selectedSegmentIndex == 1 {
-                HangoutService.delete(hangout: invitedHangouts[indexPath.row])
-                invitedHangouts.remove(at: indexPath.row)
             }
-
         }
+
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -153,6 +150,15 @@ class HomeTableViewController: UITableViewController {
         
         // segue to a different vc based on the segment
         
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle
+    {
+        if segmentedControl.selectedSegmentIndex == 1 {
+            return UITableViewCellEditingStyle.none
+        } else {
+            return UITableViewCellEditingStyle.delete
+        }
     }
     
     func configure(cell: HomeTableViewCell, atIndexPath indexPath: IndexPath) {

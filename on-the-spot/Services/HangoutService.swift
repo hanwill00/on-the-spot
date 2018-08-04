@@ -77,11 +77,11 @@ struct HangoutService {
     static func delete(hangout: Hangout) {
         let currentUser = User.current
         if let hangoutKey = hangout.key {
-            //ref to hangout in hangout tree
-            let hangoutRef = Database.database().reference().child("Hangouts").child(hangoutKey).child("invites")
+            //ref to invites in hangouts in hangout tree
+            let hangoutInvitesRef = Database.database().reference().child("Hangouts").child(hangoutKey).child("invites")
             
             //remove from each invited user's tree
-            hangoutRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            hangoutInvitesRef.observeSingleEvent(of: .value, with: { (snapshot) in
 //                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
 //                    else {return}
                 let jsonSnapshot = JSON(snapshot.value)
@@ -101,7 +101,7 @@ struct HangoutService {
                     }
                     dispatchGroup.leave()
                 }
-                
+                let hangoutRef = Database.database().reference().child("Hangouts").child(hangoutKey)
                 //remove from hangouts tree
                 hangoutRef.removeValue() { error, _ in
                     print(error)
