@@ -11,5 +11,6 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var adminName: UILabel!
     @IBOutlet weak var hangoutName: UILabel!
 }

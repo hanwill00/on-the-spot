@@ -98,7 +98,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjO-sz-Xqy">
-                                            <rect key="frame" x="16" y="8" width="209" height="21"/>
+                                            <rect key="frame" x="16" y="3" width="209" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Css-b2-aw8">
+                                            <rect key="frame" x="16" y="22" width="309" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -107,6 +114,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="adminName" destination="Css-b2-aw8" id="uGo-Rn-OHZ"/>
                                     <outlet property="hangoutName" destination="VjO-sz-Xqy" id="LQA-IL-15a"/>
                                 </connections>
                             </tableViewCell>
@@ -427,13 +435,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zeF-wL-hkv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoingFriendsTableViewCell" id="zeF-wL-hkv" customClass="GoingFriendsTableViewCell" customModule="on_the_spot" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zeF-wL-hkv" id="kXv-P4-0Eh">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9Y-07-xBY">
+                                                    <rect key="frame" x="23" y="11" width="149" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="friendName" destination="L9Y-07-xBY" id="HhK-qi-whk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -496,9 +516,10 @@
                     </view>
                     <connections>
                         <outlet property="RSVPButton" destination="udS-jb-LEP" id="r1E-PA-21Y"/>
+                        <outlet property="goingTableView" destination="kaw-El-eGo" id="xv0-i7-dza"/>
                         <outlet property="hangoutName" destination="TXS-MC-OCC" id="IUz-pI-6Y0"/>
+                        <outlet property="invitedTableView" destination="rNo-wY-Erc" id="Q6Q-Vy-4g3"/>
                         <outlet property="maxCap" destination="k49-v0-zZb" id="tEP-cP-Yr0"/>
-                        <outlet property="tableView" destination="rNo-wY-Erc" id="e03-Rb-v9j"/>
                         <segue destination="PIl-DC-xwX" kind="unwind" identifier="send" unwindAction="unwindToHome:" id="bNa-qq-lsM"/>
                     </connections>
                 </viewController>

@@ -168,6 +168,7 @@ class HomeTableViewController: UITableViewController {
         } else if segmentedControl.selectedSegmentIndex == 1 {
             let hangout = invitedHangouts[indexPath.row]
             cell.hangoutName.text = hangout.name
+            cell.adminName.text = hangout.admin
         }
 
         

@@ -94,22 +94,45 @@ struct FriendService {
                     completion(friends)
                 })
             })
-           
-          
-            
-            
-//            guard let snapshots = snapshot.children.allObjects as? [DataSnapshot]
-//                else { return completion([]) }
-//            let newSnapshots = snapshots.map { (snapshot: DataSnapshot) in
-//                var userUID = snapshot.key
-//                let ref = Database.database().reference().child("users").child("userUID")
-//                ref.observeSingleEvent(of: .value, with: { (newSnapshot) in
-//                    return newSnapshot
-//                })
-//            }
-//          //  let friends = newSnapshots.compactMap(User.init)
-            //print(friends)
-            //completion(friends)
         })
     }
+    
+    static func getGoingFriends(_ hangout: Hangout, completion: @escaping ([User]) -> Void) {
+        
+        let hangoutRef = Database.database().reference().child("Hangouts").child(hangout.key!).child("invites")
+        
+        hangoutRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let jsonSnapshot = JSON(snapshot.value)
+            var userUIDs = [String]()
+            for (key, _) in jsonSnapshot {
+                userUIDs.append(key)
+            }
+            let dg2 = DispatchGroup()
+            var goingFriends = [User]()
+            for id in userUIDs {
+                dg2.enter()
+                print(id)
+                let userRef = Database.database().reference().child("users").child(id)
+                userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                    let jsonSnapshot = JSON(snapshot.value)
+                    let hangouts = jsonSnapshot["hangouts"]
+                    let hangoutKey = hangouts[hangout.key!]
+                    let goingBoolean = hangoutKey["going"].boolValue
+                    if goingBoolean {
+                        let goingFriend = User(snapshot: snapshot)
+                        goingFriends.append(goingFriend!)
+                    }
+                    dg2.leave()
+                })
+                dg2.notify(queue: .main, execute: {
+                    completion(goingFriends)
+                })
+            }
+            
+        })
+        
+    }
+    
 }
+
+

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		538DA8844FC221C874F5621F /* Pods_on_the_spot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225048BFC92DB27AC0286213 /* Pods_on_the_spot.framework */; };
+		BE0BB6C521165875007C2FC2 /* GoingFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BB6C421165875007C2FC2 /* GoingFriendsTableViewCell.swift */; };
 		BE11E892210A7A15002CCD29 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE11E891210A7A15002CCD29 /* SideMenu.framework */; };
 		BE11E896210A82B5002CCD29 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E895210A82B5002CCD29 /* ContactsViewController.swift */; };
 		BE11E899210A8713002CCD29 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E898210A8713002CCD29 /* ContactTableViewCell.swift */; };
@@ -39,6 +40,7 @@
 		1F155D91C4FF765E75C27A6D /* Pods-on-the-spot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-on-the-spot.release.xcconfig"; path = "Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot.release.xcconfig"; sourceTree = "<group>"; };
 		225048BFC92DB27AC0286213 /* Pods_on_the_spot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_on_the_spot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9289A05CCEA1832DED663CAD /* Pods-on-the-spot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-on-the-spot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot.debug.xcconfig"; sourceTree = "<group>"; };
+		BE0BB6C421165875007C2FC2 /* GoingFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingFriendsTableViewCell.swift; sourceTree = "<group>"; };
 		BE11E891210A7A15002CCD29 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = Carthage/Build/iOS/SideMenu.framework; sourceTree = "<group>"; };
 		BE11E895210A82B5002CCD29 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		BE11E898210A8713002CCD29 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */,
 				BE11E89B210B962D002CCD29 /* FriendsTableViewCell.swift */,
 				BE11E898210A8713002CCD29 /* ContactTableViewCell.swift */,
+				BE0BB6C421165875007C2FC2 /* GoingFriendsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */,
 				BE11E89C210B962D002CCD29 /* FriendsTableViewCell.swift in Sources */,
 				BE23579F210783DB00EE9D2C /* LoginViewController.swift in Sources */,
+				BE0BB6C521165875007C2FC2 /* GoingFriendsTableViewCell.swift in Sources */,
 				BE2357AB2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift in Sources */,
 				BE2357A1210794DC00EE9D2C /* StartViewController.swift in Sources */,
 				BE11E896210A82B5002CCD29 /* ContactsViewController.swift in Sources */,
