@@ -10,6 +10,7 @@ import Foundation
 import FirebaseDatabase.FIRDataSnapshot
 import Firebase
 import FirebaseUI
+import SwiftyJSON
 
 class User {
     
@@ -47,5 +48,6 @@ class User {
     static func setCurrent(_ user: User) {
         _current = user
     }
+
     
 }

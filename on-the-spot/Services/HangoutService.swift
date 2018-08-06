@@ -73,7 +73,20 @@ struct HangoutService {
     }
         
         //Updating hangout information under hangout key
-        
+    
+    static func setGoing(_ hangout: Hangout, user: User) -> () {
+        let ref = Database.database().reference().child("users").child(user.uid).child("hangouts").child(hangout.key!)
+        ref.updateChildValues(["going" : true])
+    }
+    
+    static func setNotGoing(_ hangout: Hangout, user: User) -> () {
+        let ref = Database.database().reference().child("users").child(user.uid).child("hangouts").child(hangout.key!)
+        ref.updateChildValues(["going" : false])
+    }
+    
+    
+
+    
     static func delete(hangout: Hangout) {
         let currentUser = User.current
         if let hangoutKey = hangout.key {

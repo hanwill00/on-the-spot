@@ -39,7 +39,7 @@ class Hangout {
 
         self.maxCap = dict["maxCap"] as! Int
         self.name = dict["name"] as! String
-        self.admin = User.current.uid
+        self.admin = dict["admin"] as! String
         self.creationDate = Date()
         self.key = snapshot.key
     }

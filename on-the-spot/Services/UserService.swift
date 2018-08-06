@@ -37,6 +37,15 @@ struct UserService {
         }
     }
     
+    static func getUser(_ userUID: String, completion: @escaping (User) -> Void) {
+        let userRef = Database.database().reference().child("users").child(userUID)
+        userRef.observeSingleEvent(of: .value) { (snapshot) in
+            if let user = User(snapshot: snapshot) {
+                completion(user)
+            }
+        }
+    }
+    
     static func usersExcludingCurrentUser(completion: @escaping ([User]) -> Void) {
         let currentUser = User.current
         // 1

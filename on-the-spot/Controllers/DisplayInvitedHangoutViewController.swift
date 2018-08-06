@@ -8,6 +8,11 @@
     
     import Foundation
     import UIKit
+    import FirebaseAuth
+    import FirebaseUI
+    import FirebaseDatabase
+    import SwiftyJSON
+
     
     class DisplayInvitedHangoutViewController: UIViewController {
         var hangout: Hangout?
@@ -69,6 +74,56 @@
                     self.goingTableView.reloadData()
                 }
             }
+            if let hangout = hangout {
+                let ref = Database.database().reference().child("users").child(User.current.uid).child("hangouts").child(hangout.key!)
+                ref.observeSingleEvent(of: .value) { (snapshot) in
+                    let jsonSnapshot = JSON(snapshot.value)
+                    if jsonSnapshot["going"].boolValue{
+                        self.RSVPButton.setTitle("Un-RSVP", for: .normal)
+                    }else{
+                        self.RSVPButton.setTitle("RSVP", for: .normal)
+                    }
+                    
+                }
+            }
+            
+            
+            
+        }
+        
+        @IBAction func RSVPButtonTapped(_ sender: UIButton) {
+            let currentUserUID = User.current.uid
+            if let hangout = hangout {
+                let ref = Database.database().reference().child("users").child(currentUserUID).child("hangouts").child(hangout.key!)
+                ref.observeSingleEvent(of: .value) { (snapshot) in
+                    let jsonSnapshot = JSON(snapshot.value)
+                    if jsonSnapshot["going"].boolValue{
+                        HangoutService.setNotGoing(hangout, user: User.current)
+                        UserService.getUser(currentUserUID) { (currentUser) in
+                            for i in (0..<self.goingFriends.count) {
+                                if self.goingFriends[i].uid == currentUser.uid {
+                                    self.goingFriends.remove(at: i)
+                                }
+                            }
+                            
+                            
+                        }
+                        self.RSVPButton.setTitle("RSVP", for: .normal)
+                        
+                    }else{
+                        HangoutService.setGoing(hangout, user: User.current)
+                        UserService.getUser(currentUserUID) { (currentUser) in
+                            self.goingFriends.append(currentUser)
+                            
+                        }
+                        self.RSVPButton.setTitle("Un-RSVP", for: .normal)
+                    }
+                    
+                }
+            }
+            
+            
+            
             
         }
         
@@ -138,6 +193,8 @@
             //
             
         }
+        
+        
         
         @objc func didTapSelectButton(_ selectButton: UIButton) {
             print("hello")

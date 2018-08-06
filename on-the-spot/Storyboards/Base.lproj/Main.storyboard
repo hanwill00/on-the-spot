@@ -509,6 +509,9 @@
                                 <rect key="frame" x="115" y="178" width="244" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="RSVP"/>
+                                <connections>
+                                    <action selector="RSVPButtonTapped:" destination="qdQ-Uh-aIf" eventType="touchUpInside" id="Qfj-sE-RZy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
