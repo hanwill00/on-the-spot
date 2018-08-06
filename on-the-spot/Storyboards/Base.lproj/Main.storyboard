@@ -124,6 +124,7 @@
                                 <connections>
                                     <outlet property="adminName" destination="Css-b2-aw8" id="uGo-Rn-OHZ"/>
                                     <outlet property="hangoutName" destination="VjO-sz-Xqy" id="LQA-IL-15a"/>
+                                    <outlet property="optionsButton" destination="o5x-pv-qGr" id="7gD-lu-6cY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

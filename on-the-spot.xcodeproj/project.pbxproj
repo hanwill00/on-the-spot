@@ -23,7 +23,6 @@
 		BE2357A82107E0EA00EE9D2C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357A72107E0EA00EE9D2C /* HomeTableViewController.swift */; };
 		BE2357AB2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AA2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift */; };
 		BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */; };
-		BE2357AF2107F07000EE9D2C /* HomeTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */; };
 		BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */; };
 		BE6C72F52109259F004630D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F42109259F004630D4 /* User.swift */; };
 		BE6C72F721093777004630D4 /* FriendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F621093777004630D4 /* FriendService.swift */; };
@@ -55,7 +54,6 @@
 		BE2357A72107E0EA00EE9D2C /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		BE2357AA2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAddHangoutViewController.swift; sourceTree = "<group>"; };
 		BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTableViewCell.storyboard; sourceTree = "<group>"; };
 		BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 		BE6C72F42109259F004630D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE6C72F621093777004630D4 /* FriendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendService.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				BE90183A21063333000800F4 /* LaunchScreen.storyboard */,
 				BE9018352106332B000800F4 /* Main.storyboard */,
 				BE23579C2107839000EE9D2C /* Login.storyboard */,
-				BE2357AE2107F07000EE9D2C /* HomeTableViewCell.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -287,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE90183C21063333000800F4 /* LaunchScreen.storyboard in Resources */,
-				BE2357AF2107F07000EE9D2C /* HomeTableViewCell.storyboard in Resources */,
 				BE23579B21069EFB00EE9D2C /* GoogleService-Info.plist in Resources */,
 				BE90183921063333000800F4 /* Assets.xcassets in Resources */,
 				BE23579D2107839000EE9D2C /* Login.storyboard in Resources */,

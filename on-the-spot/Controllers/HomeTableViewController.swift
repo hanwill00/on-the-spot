@@ -160,9 +160,16 @@ class HomeTableViewController: UITableViewController {
             let hangout = createdHangouts[indexPath.row]
             cell.hangoutName.text = hangout.name
             cell.adminName.text = ""
+            cell.optionsButton.isEnabled = false
+            let btnImage = UIImage(named: "blank")
+            cell.optionsButton.setImage(btnImage, for: .normal)
+            
         } else if segmentedControl.selectedSegmentIndex == 1 {
             let hangout = invitedHangouts[indexPath.row]
             cell.hangoutName.text = hangout.name
+            cell.optionsButton.isEnabled = true
+            let btnImage = UIImage(named: "options-button")
+            cell.optionsButton.setImage(btnImage, for: .normal)
             UserService.getUser(hangout.admin) { (user) in
                 cell.adminName.text = user.name
             }

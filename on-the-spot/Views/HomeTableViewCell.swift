@@ -12,6 +12,7 @@ import UIKit
 class HomeTableViewCell: UITableViewCell {
     var didTapOptionsButtonForCell: ((HomeTableViewCell) -> Void)?
 
+    @IBOutlet weak var optionsButton: UIButton!
     @IBOutlet weak var adminName: UILabel!
     @IBOutlet weak var hangoutName: UILabel!
     
