@@ -73,8 +73,14 @@
                 DispatchQueue.main.async {
                     self.goingTableView.reloadData()
                 }
+                if let hangout = self.hangout {
+                    if self.goingFriends.count == hangout.maxCap {
+                        self.RSVPButton.isEnabled = false
+                    }
+                }
             }
             if let hangout = hangout {
+
                 let ref = Database.database().reference().child("users").child(User.current.uid).child("hangouts").child(hangout.key!)
                 ref.observeSingleEvent(of: .value) { (snapshot) in
                     let jsonSnapshot = JSON(snapshot.value)
@@ -82,8 +88,8 @@
                         self.RSVPButton.setTitle("Un-RSVP", for: .normal)
                     }else{
                         self.RSVPButton.setTitle("RSVP", for: .normal)
+
                     }
-                    
                 }
             }
             
@@ -105,11 +111,8 @@
                                     self.goingFriends.remove(at: i)
                                 }
                             }
-                            
-                            
                         }
                         self.RSVPButton.setTitle("RSVP", for: .normal)
-                        
                     }else{
                         HangoutService.setGoing(hangout, user: User.current)
                         UserService.getUser(currentUserUID) { (currentUser) in
