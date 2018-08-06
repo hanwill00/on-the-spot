@@ -282,6 +282,36 @@ struct HangoutService {
         })
     }
     
+    static func flag(_ hangout: Hangout) {
+        // 1
+        guard let hangoutKey = hangout.key else { return }
+        
+        // 2
+        let flaggedHangoutRef = Database.database().reference().child("flaggedHangouts").child(hangoutKey)
+        
+        UserService.getUser(hangout.admin) { (user) in
+            let flaggedDict = ["name": hangout.name,
+                               "admin_uid": user.uid,
+                               "reporter_uid": User.current.uid]
+        
+        // 3
+        
+        
+        // 4
+            flaggedHangoutRef.updateChildValues(flaggedDict)
+        }
+        // 5
+        let flagCountRef = flaggedHangoutRef.child("flag_count")
+        flagCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+            let currentCount = mutableData.value as? Int ?? 0
+            
+            mutableData.value = currentCount + 1
+            
+            return TransactionResult.success(withValue: mutableData)
+        })
+    }
+
+    
     static func isInvited(_ user: User, hangout: Hangout, completion: @escaping (Bool) -> Void ) {
         if let hangoutkey = hangout.key {
             let hangoutRef = Database.database().reference().child("hangouts").child(hangout.key!).child("invites")

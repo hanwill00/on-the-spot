@@ -128,28 +128,22 @@ class HomeTableViewController: UITableViewController {
                 createdHangouts.remove(at: indexPath.row)
             }
         }
-
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        cell.didTapOptionsButtonForCell = handleOptionsButtonTap(from:)
         configure(cell: cell, atIndexPath: indexPath)
 
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // check which segment is selected
         if segmentedControl.selectedSegmentIndex == 0 {
             self.performSegue(withIdentifier: "displayCreatedHangout", sender: self)
         } else if segmentedControl.selectedSegmentIndex == 1 {
             self.performSegue(withIdentifier: "displayInvitedHangout", sender: self)
         }
-        
-        // segue to a different vc based on the segment
-        
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle
@@ -172,11 +166,38 @@ class HomeTableViewController: UITableViewController {
             UserService.getUser(hangout.admin) { (user) in
                 cell.adminName.text = user.name
             }
-            
         }
-
-        
-        
     }
     
+    func handleOptionsButtonTap(from cell: HomeTableViewCell) {
+        // 1
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        // 2
+        let hangout = invitedHangouts[indexPath.row]
+        let admin = hangout.admin
+        
+        // 3
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // 4
+        if admin != User.current.uid {
+            let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
+                HangoutService.flag(hangout)
+                
+                let okAlert = UIAlertController(title: nil, message: "The post has been flagged.", preferredStyle: .alert)
+                okAlert.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(okAlert, animated: true)
+            }
+            
+            alertController.addAction(flagAction)
+        }
+        
+        // 5
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        // 6
+        present(alertController, animated: true, completion: nil)
+    }
 }

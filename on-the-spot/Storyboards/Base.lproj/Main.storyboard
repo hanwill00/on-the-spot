@@ -105,12 +105,20 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Css-b2-aw8">
-                                            <rect key="frame" x="16" y="22" width="309" height="21"/>
+                                            <rect key="frame" x="16" y="22" width="247" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5x-pv-qGr">
+                                            <rect key="frame" x="321" y="9" width="38" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button" image="options-button"/>
+                                            <connections>
+                                                <action selector="optionsButtonTapped:" destination="zlV-M8-A4F" eventType="touchUpInside" id="07X-G8-HHG"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -669,5 +677,6 @@
     </scenes>
     <resources>
         <image name="Image-1" width="24" height="24"/>
+        <image name="options-button" width="24" height="24"/>
     </resources>
 </document>
