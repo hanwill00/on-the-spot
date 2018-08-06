@@ -118,13 +118,8 @@
                         }
                         self.RSVPButton.setTitle("Un-RSVP", for: .normal)
                     }
-                    
                 }
             }
-            
-            
-            
-            
         }
         
         

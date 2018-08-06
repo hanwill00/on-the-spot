@@ -12,11 +12,21 @@
     class DisplayCreatedHangoutViewController: UIViewController {
         var hangout: Hangout?
         var friends = [User]()
-        var invitedFriends = [String: Bool]()
+        var invitedFriends = [String: Bool]() {
+            didSet {
+                invitedTableView.reloadData()
+            }
+        }
+        var goingFriends = [User]() {
+            didSet {
+                goingTableView.reloadData()
+            }
+        }
 
         @IBOutlet weak var hangoutName: UITextField!
         @IBOutlet weak var maxCap: UITextField!
-        @IBOutlet weak var tableView: UITableView!
+        @IBOutlet weak var invitedTableView: UITableView!
+        @IBOutlet weak var goingTableView: UITableView!
         
         override func viewDidLoad() {
             let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
@@ -41,7 +51,13 @@
                 self.friends = friends
                 print(friends)
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.invitedTableView.reloadData()
+                }
+            }
+            FriendService.getGoingFriends(self.hangout!) { [unowned self] (goingFriends) in
+                self.goingFriends = goingFriends
+                DispatchQueue.main.async {
+                    self.goingTableView.reloadData()
                 }
             }
         }
@@ -50,42 +66,62 @@
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
         }
-        
-        
-        @IBAction func sendButtonTapped(_ sender: UIBarButtonItem) {
-            if let inputtedMaxCapText = maxCap.text, let intMaxCap = Int(inputtedMaxCapText) {
-                
-                let myCompletionCodeToRunWhenCreateIsDone: (Hangout?) -> () = { (hangout) in
-                    guard let hangout = hangout else {return}
-                    self.performSegue(withIdentifier: "send", sender: self)
-                }
-                
-                HangoutService.create(for: hangoutName.text!, maxCap: intMaxCap, invitedFriends: invitedFriends, completion: myCompletionCodeToRunWhenCreateIsDone)
-                
-            }
-        }
     }
     
     extension DisplayCreatedHangoutViewController: UITableViewDataSource, UITableViewDelegate {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return friends.count
+            var count:Int?
+            
+            if tableView == self.invitedTableView {
+                count = friends.count
+            }
+            
+            if tableView == self.goingTableView {
+                count =  goingFriends.count
+            }
+            
+            return count!
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCell") as! FriendsTableViewCell
-            configure(cell: cell, atIndexPath: indexPath)
+            var friendsTableViewCell:FriendsTableViewCell?
+            var goingFriendsTableViewCell:GoingFriendsTableViewCell?
             
-            cell.selectButton.tag = indexPath.row
-            
-            cell.selectButton.addTarget(self, action: #selector(didTapSelectButton(_:)), for: .touchUpInside)
-            
-            return cell
+            if tableView == self.invitedTableView {
+                friendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCell") as! FriendsTableViewCell
+                configureInvited(cell: friendsTableViewCell as! FriendsTableViewCell, atIndexPath: indexPath)
+                friendsTableViewCell?.selectButton.tag = indexPath.row
+                friendsTableViewCell?.selectButton.addTarget(self, action: #selector(didTapSelectButton(_:)), for: .touchUpInside)
+                if let friendsTableViewCell = friendsTableViewCell {
+                    return friendsTableViewCell as! UITableViewCell
+                }
+            }
+            if tableView == self.goingTableView {
+                goingFriendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "GoingFriendsTableViewCell") as! GoingFriendsTableViewCell
+                configureGoing(cell: goingFriendsTableViewCell as! GoingFriendsTableViewCell, atIndexPath: indexPath)
+                if let goingFriendsTableViewCell = goingFriendsTableViewCell {
+                    return goingFriendsTableViewCell as! UITableViewCell
+                }
+            }
+            return friendsTableViewCell as! UITableViewCell
         }
         
-        func configure(cell: FriendsTableViewCell, atIndexPath indexPath: IndexPath) {
+        func configureInvited(cell: FriendsTableViewCell, atIndexPath indexPath: IndexPath) {
             let friend = friends[indexPath.row]
             
             cell.friendName.text = friend.name
+            //        HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
+            //            cell.selectButton.isSelected = isInvited
+            //        }
+            //
+            
+        }
+        
+        
+        func configureGoing(cell: GoingFriendsTableViewCell, atIndexPath indexPath: IndexPath) {
+            let goingFriend = goingFriends[indexPath.row]
+            
+            cell.friendName.text = goingFriend.name
             //        HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
             //            cell.selectButton.isSelected = isInvited
             //        }

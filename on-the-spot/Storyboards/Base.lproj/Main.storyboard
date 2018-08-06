@@ -616,15 +616,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QKy-O1-Cly">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoingFriendsTableViewCell" id="QKy-O1-Cly" customClass="GoingFriendsTableViewCell" customModule="on_the_spot" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QKy-O1-Cly" id="TRB-A7-Ab5">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhq-Fj-F2d">
+                                                    <rect key="frame" x="15" y="12" width="149" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="friendName" destination="Dhq-Fj-F2d" id="tzR-5i-gQp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="a45-WD-t7o" id="fgK-mz-dsc"/>
+                                    <outlet property="delegate" destination="a45-WD-t7o" id="ZyR-ma-VoE"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTP-Ac-Xsw">
                                 <rect key="frame" x="16" y="410" width="73" height="30"/>
@@ -638,9 +654,10 @@
                         <viewLayoutGuide key="safeArea" id="1AA-qa-n7p"/>
                     </view>
                     <connections>
+                        <outlet property="goingTableView" destination="Bmw-1b-TrV" id="iG2-F1-x4j"/>
                         <outlet property="hangoutName" destination="ris-ui-C7l" id="w6E-1f-aqX"/>
+                        <outlet property="invitedTableView" destination="blq-VS-qfz" id="2GT-Xn-N7Q"/>
                         <outlet property="maxCap" destination="8ib-b0-4Mw" id="ZQ9-0l-r1u"/>
-                        <outlet property="tableView" destination="blq-VS-qfz" id="QO9-We-C14"/>
                         <segue destination="YX3-vj-nvB" kind="unwind" identifier="send" unwindAction="unwindToHome:" id="43h-Wp-bCV"/>
                     </connections>
                 </viewController>
