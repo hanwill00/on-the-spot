@@ -21,8 +21,10 @@ class DisplayAddHangoutViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIBarButtonItem!
     
+    @IBOutlet weak var HangoutInfoView: UIView!
     
     override func viewDidLoad() {
+
         let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
@@ -48,7 +50,20 @@ class DisplayAddHangoutViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+//                setupViews()
     }
+    
+//    func setupViews() {
+//        HangoutInfoView.layer.shadowOffset = CGSize(width: 0, height: 1)
+//        HangoutInfoView.layer.shadowOpacity = 0.05
+//        HangoutInfoView.layer.shadowColor = UIColor.black.cgColor
+//        HangoutInfoView.layer.shadowRadius = 35
+//        HangoutInfoView.layer.cornerRadius = 8
+//        HangoutInfoView.layer.masksToBounds = true
+//
+//        hangoutName.layer.cornerRadius = 5
+//        hangoutName.layer.masksToBounds = true
+//    }
     
     
     override func didReceiveMemoryWarning() {

@@ -1,4 +1,5 @@
 # Uncomment the next line to define a global platform for your project
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 
 target 'on-the-spot' do
@@ -12,5 +13,7 @@ target 'on-the-spot' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'SideMenu'
-   pod 'SwiftyJSON', '~> 4.0'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'Hero'
+  pod 'SnapKit', '~> 4.0'
 end

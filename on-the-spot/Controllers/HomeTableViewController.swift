@@ -12,6 +12,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseUI
 import FirebaseDatabase
+import SnapKit
 
 
 class HomeTableViewController: UITableViewController {
@@ -34,6 +35,7 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func didReceiveMemoryWarning() {

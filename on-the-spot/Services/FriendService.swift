@@ -128,11 +128,8 @@ struct FriendService {
                     completion(goingFriends)
                 })
             }
-            
         })
-        
     }
-    
 }
 
 

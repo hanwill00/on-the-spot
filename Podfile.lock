@@ -37,6 +37,7 @@ PODS:
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.1.15)
+  - Hero (1.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -44,6 +45,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - SideMenu (4.0.0)
+  - SnapKit (4.0.0)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
@@ -52,7 +54,9 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - FirebaseUI/Auth
+  - Hero
   - SideMenu
+  - SnapKit (~> 4.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -67,9 +71,11 @@ SPEC REPOS:
     - FirebaseUI
     - GoogleToolboxForMac
     - GTMSessionFetcher
+    - Hero
     - leveldb-library
     - nanopb
     - SideMenu
+    - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -83,11 +89,13 @@ SPEC CHECKSUMS:
   FirebaseUI: 6d3f86249a4de8288424e154c9ff1a976aae3910
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 579d42228ae2b1b8716c0de08db2857c87d8878e
+PODFILE CHECKSUM: 4a28d8a4d7c0b5c43d3d093c9d704b71d622d9c4
 
 COCOAPODS: 1.5.3
