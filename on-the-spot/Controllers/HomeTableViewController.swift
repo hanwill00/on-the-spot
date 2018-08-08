@@ -184,17 +184,10 @@ class HomeTableViewController: UITableViewController {
     }
     
     func handleOptionsButtonTap(from cell: HomeTableViewCell) {
-        // 1
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        
-        // 2
         let hangout = invitedHangouts[indexPath.row]
         let admin = hangout.admin
-        
-        // 3
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        // 4
         if admin != User.current.uid {
             let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
                 HangoutService.flag(hangout)
@@ -203,15 +196,11 @@ class HomeTableViewController: UITableViewController {
                 okAlert.addAction(UIAlertAction(title: "Ok", style: .default))
                 self.present(okAlert, animated: true)
             }
-            
             alertController.addAction(flagAction)
         }
-        
-        // 5
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-        // 6
         present(alertController, animated: true, completion: nil)
     }
 }

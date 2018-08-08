@@ -136,9 +136,9 @@ extension DisplayAddHangoutViewController: UITableViewDataSource, UITableViewDel
         
     }
     
+    
+    
     @objc func didTapSelectButton(_ selectButton: UIButton) {
-        print("hello")
-        
         let index = selectButton.tag
         
         let friend = friends[index]
