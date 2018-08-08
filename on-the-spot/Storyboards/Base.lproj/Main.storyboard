@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -109,29 +110,40 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjO-sz-Xqy">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjO-sz-Xqy">
                                             <rect key="frame" x="16" y="3" width="286" height="38"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Css-b2-aw8">
-                                            <rect key="frame" x="16" y="38" width="247" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5x-pv-qGr">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5x-pv-qGr">
                                             <rect key="frame" x="331" y="27" width="28" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="28" id="3Mc-aD-L5J"/>
+                                            </constraints>
                                             <state key="normal" title="Button" image="options-button"/>
                                             <connections>
                                                 <action selector="optionsButtonTapped:" destination="zlV-M8-A4F" eventType="touchUpInside" id="07X-G8-HHG"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Css-b2-aw8">
+                                            <rect key="frame" x="16" y="41" width="286" height="28"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="VjO-sz-Xqy" firstAttribute="leading" secondItem="ria-rB-9rD" secondAttribute="leading" constant="16" id="Bdq-G2-M3t"/>
+                                        <constraint firstItem="o5x-pv-qGr" firstAttribute="leading" secondItem="Css-b2-aw8" secondAttribute="trailing" constant="29" id="IVf-Gn-0Na"/>
+                                        <constraint firstItem="o5x-pv-qGr" firstAttribute="trailing" secondItem="ria-rB-9rD" secondAttribute="trailingMargin" id="Mth-vu-bcv"/>
+                                        <constraint firstItem="Css-b2-aw8" firstAttribute="leading" secondItem="ria-rB-9rD" secondAttribute="leadingMargin" id="Xi2-c6-eHT"/>
+                                        <constraint firstItem="o5x-pv-qGr" firstAttribute="top" secondItem="ria-rB-9rD" secondAttribute="topMargin" constant="16" id="aex-cp-aI6"/>
+                                        <constraint firstItem="o5x-pv-qGr" firstAttribute="leading" secondItem="VjO-sz-Xqy" secondAttribute="trailing" constant="29" id="eEq-iA-ckV"/>
+                                        <constraint firstItem="Css-b2-aw8" firstAttribute="top" secondItem="VjO-sz-Xqy" secondAttribute="bottom" id="ica-0S-NSd"/>
+                                        <constraint firstItem="VjO-sz-Xqy" firstAttribute="top" secondItem="ria-rB-9rD" secondAttribute="top" constant="3" id="pko-3T-fcY"/>
+                                        <constraint firstItem="Css-b2-aw8" firstAttribute="bottom" secondItem="ria-rB-9rD" secondAttribute="bottomMargin" id="qHk-jq-ufk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="adminName" destination="Css-b2-aw8" id="uGo-Rn-OHZ"/>
