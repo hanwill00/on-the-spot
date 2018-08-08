@@ -77,6 +77,8 @@ class DisplayAddHangoutViewController: UIViewController {
         HangoutInfoView.layer.shadowRadius = 35
         HangoutInfoView.layer.cornerRadius = 8
         HangoutInfoView.layer.masksToBounds = true
+        
+        hangoutName.borderStyle = UITextBorderStyle.roundedRect
     }
     
     

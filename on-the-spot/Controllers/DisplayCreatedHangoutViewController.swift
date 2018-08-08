@@ -23,16 +23,41 @@
             }
         }
 
+        @IBOutlet weak var HangoutInfoView: UIView!
         @IBOutlet weak var hangoutName: UITextField!
         @IBOutlet weak var maxCap: UITextField!
         @IBOutlet weak var invitedTableView: UITableView!
         @IBOutlet weak var goingTableView: UITableView!
         
         override func viewDidLoad() {
+            super.viewDidLoad()
+            setupViews()
             let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
             tap.cancelsTouchesInView = false
             self.view.addGestureRecognizer(tap)
-            super.viewDidLoad()
+        }
+        
+        func setupViews() {
+            invitedTableView.layer.shadowOffset = CGSize(width: 0, height: 1)
+            invitedTableView.layer.shadowOpacity = 0.05
+            invitedTableView.layer.shadowColor = UIColor.black.cgColor
+            invitedTableView.layer.shadowRadius = 35
+            invitedTableView.layer.cornerRadius = 8
+            invitedTableView.layer.masksToBounds = true
+            
+            goingTableView.layer.shadowOffset = CGSize(width: 0, height: 1)
+            goingTableView.layer.shadowOpacity = 0.05
+            goingTableView.layer.shadowColor = UIColor.black.cgColor
+            goingTableView.layer.shadowRadius = 35
+            goingTableView.layer.cornerRadius = 8
+            goingTableView.layer.masksToBounds = true
+            
+            HangoutInfoView.layer.shadowOffset = CGSize(width: 0, height: 1)
+            HangoutInfoView.layer.shadowOpacity = 0.05
+            HangoutInfoView.layer.shadowColor = UIColor.black.cgColor
+            HangoutInfoView.layer.shadowRadius = 35
+            HangoutInfoView.layer.cornerRadius = 8
+            HangoutInfoView.layer.masksToBounds = true
         }
         
         override func viewWillDisappear(_ animated: Bool) {
