@@ -136,43 +136,6 @@ struct HangoutService {
         //let ref = Database.database().reference().child("hangouts").child(hangout.key)
     }
 
-//    static func getUserHangouts(completion: @escaping ([Hangout]) -> Void) {
-//        let currentUser = User.current
-//        let ref = Database.database().reference().child("users").child(currentUser.uid).child("hangouts")
-//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-////            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
-////
-////                else {return completion([])}
-//            let jsonSnapshot = JSON(snapshot.value)
-//            var hangoutKeys = [String]()
-//            for (key, subJson) in jsonSnapshot {
-//                print(key)
-//                hangoutKeys.append(key)
-//            }
-//            let dg = DispatchGroup()
-//            var usersHangouts = [Hangout]()
-//            //key is all of the hangouts under currentUser.uid
-//            hangoutKeys.forEach({ (key) in
-//                dg.enter()
-//                let ref = Database.database().reference().child("Hangouts").child(key)
-//                ref.observeSingleEvent(of: .value, with: { (snapshot) in
-////                    guard let snapshot = snapshot else { return }
-////                    let maxCapSnapshot = snapshot[2] as? String : Any
-////                    let maxCap = maxCapSnapshot["maxCap"]
-////                    let nameSnapshot = snapshot[3]
-////                    let name = nameSnapshot["name"]
-//
-//                    let hangout = Hangout(snapshot: snapshot)
-//                    usersHangouts.append(hangout!)
-//                    dg.leave()
-//                })
-//                dg.notify(queue: .main, execute: {
-//                    completion(usersHangouts)
-//                })
-//
-//            })
-//        })
-//    }
     
     static func getUserCreatedHangouts(completion: @escaping ([Hangout]) -> Void) {
         let currentUser = User.current
@@ -192,17 +155,7 @@ struct HangoutService {
                 }
                 
             }
-//                let createdRef = ref.child(key)
-//                ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//                    let jsonSnapshot2 = JSON(snapshot.value)
-//                    letisCreated = jsonSnapshot2["created"].boolValue
-//                    if isCreated {
-//                        hangoutKeys.append(key)
-//                    }
-//
-//                })
-
-//            }
+            
             let dg = DispatchGroup()
             var usersHangouts = [Hangout]()
             //key is all of the hangouts under currentUser.uid
@@ -210,11 +163,6 @@ struct HangoutService {
                 dg.enter()
                 let ref = Database.database().reference().child("Hangouts").child(key)
                 ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                    //                    guard let snapshot = snapshot else { return }
-                    //                    let maxCapSnapshot = snapshot[2] as? String : Any
-                    //                    let maxCap = maxCapSnapshot["maxCap"]
-                    //                    let nameSnapshot = snapshot[3]
-                    //                    let name = nameSnapshot["name"]
 
                     let hangout = Hangout(snapshot: snapshot)
                     usersHangouts.append(hangout!)
@@ -232,9 +180,6 @@ struct HangoutService {
         let currentUser = User.current
         let hangoutsRef = Database.database().reference().child("users").child(currentUser.uid).child("hangouts")
         hangoutsRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            //            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
-            //
-            //                else {return completion([])}
             let jsonSnapshot = JSON(snapshot.value)
             var hangoutKeys = [String]()
             for (key, subJson) in jsonSnapshot {
@@ -246,17 +191,6 @@ struct HangoutService {
                 }
                 
             }
-            //                let createdRef = ref.child(key)
-            //                ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            //                    let jsonSnapshot2 = JSON(snapshot.value)
-            //                    letisCreated = jsonSnapshot2["created"].boolValue
-            //                    if isCreated {
-            //                        hangoutKeys.append(key)
-            //                    }
-            //
-            //                })
-            
-            //            }
             let dg = DispatchGroup()
             var usersHangouts = [Hangout]()
             //key is all of the hangouts under currentUser.uid
@@ -264,12 +198,6 @@ struct HangoutService {
                 dg.enter()
                 let ref = Database.database().reference().child("Hangouts").child(key)
                 ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                    //                    guard let snapshot = snapshot else { return }
-                    //                    let maxCapSnapshot = snapshot[2] as? String : Any
-                    //                    let maxCap = maxCapSnapshot["maxCap"]
-                    //                    let nameSnapshot = snapshot[3]
-                    //                    let name = nameSnapshot["name"]
-                    
                     let hangout = Hangout(snapshot: snapshot)
                     usersHangouts.append(hangout!)
                     dg.leave()
@@ -283,24 +211,14 @@ struct HangoutService {
     }
     
     static func flag(_ hangout: Hangout) {
-        // 1
         guard let hangoutKey = hangout.key else { return }
-        
-        // 2
         let flaggedHangoutRef = Database.database().reference().child("flaggedHangouts").child(hangoutKey)
-        
         UserService.getUser(hangout.admin) { (user) in
             let flaggedDict = ["name": hangout.name,
                                "admin_uid": user.uid,
                                "reporter_uid": User.current.uid]
-        
-        // 3
-        
-        
-        // 4
             flaggedHangoutRef.updateChildValues(flaggedDict)
         }
-        // 5
         let flagCountRef = flaggedHangoutRef.child("flag_count")
         flagCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
             let currentCount = mutableData.value as? Int ?? 0
@@ -318,12 +236,13 @@ struct HangoutService {
             var userFound = false
             hangoutRef.observeSingleEvent(of: .value) { (snapshot) in
                 let jsonSnapshot = JSON(snapshot.value)
-
                 for (key, subJson) in jsonSnapshot {
+
                     if key == user.uid {
                         userFound = true
                         completion(userFound)
                     }
+
                 }
                 completion(false)
                 

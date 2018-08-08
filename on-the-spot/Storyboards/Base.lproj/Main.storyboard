@@ -48,6 +48,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="27"/>
                                 <state key="normal" title="Hangouts"/>
+                                <connections>
+                                    <action selector="hangoutsButtonTapped:" destination="ExN-Tq-Rgl" eventType="touchUpInside" id="ArY-hH-aga"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="log-out" translatesAutoresizingMaskIntoConstraints="NO" id="8RO-wV-l1Y">
                                 <rect key="frame" x="26" y="319" width="24" height="24"/>
@@ -69,6 +72,7 @@
                     <connections>
                         <outlet property="LogoutButton" destination="RY0-nj-0gJ" id="Dth-9v-GFi"/>
                         <outlet property="contactsbutton" destination="uwe-Gz-DBW" id="NTr-nA-4hF"/>
+                        <outlet property="hangoutsButton" destination="9iw-WB-o4f" id="GMW-el-dds"/>
                         <outlet property="name" destination="iwo-Yu-gzv" id="Ma1-T4-IVK"/>
                         <segue destination="fpL-QV-K3J" kind="show" identifier="sidebarToContacts" id="Q6e-tY-kra"/>
                     </connections>

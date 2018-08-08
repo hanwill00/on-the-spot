@@ -15,6 +15,7 @@ import FirebaseDatabase
 class SideBarViewController: UIViewController {
     
     
+    @IBOutlet weak var hangoutsButton: UIButton!
     @IBOutlet weak var contactsbutton: UIButton!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var LogoutButton: UIButton!
@@ -30,6 +31,11 @@ class SideBarViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func hangoutsButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func logOutAction(_ sender: Any) {
         do {

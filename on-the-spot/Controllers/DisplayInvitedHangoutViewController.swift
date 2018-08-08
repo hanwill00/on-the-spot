@@ -212,9 +212,9 @@
             let friend = friends[indexPath.row]
             
             cell.friendName.text = friend.name
-            //        HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
-            //            cell.selectButton.isSelected = isInvited
-            //        }
+//            HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
+//                cell.selectButton.isSelected = isInvited
+//            }
             //
             
         }
@@ -224,11 +224,7 @@
             let goingFriend = goingFriends[indexPath.row]
             
             cell.friendName.text = goingFriend.name
-            //        HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
-            //            cell.selectButton.isSelected = isInvited
-            //        }
-            //
-            
+
         }
         
         
