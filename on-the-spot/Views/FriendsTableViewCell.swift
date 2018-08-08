@@ -19,21 +19,25 @@ class FriendsTableViewCell: UITableViewCell {
     weak var delegate: FriendsTableViewCellDelegate?
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var checkBox: UIImageView!
+    
     
 //    @IBAction func selectButtonTapped(_ sender: UIButton) {
 //        delegate?.didTapSelectButton(sender, on: self)
 //    }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        selectButton.layer.borderColor = UIColor.lightGray.cgColor
-        selectButton.layer.borderWidth = 1
-        selectButton.layer.cornerRadius = 6
-        selectButton.clipsToBounds = true
-        
-        selectButton.setTitle("Select", for: .normal)
-        selectButton.setTitle("Selected", for: .selected)
+//        selectButton.layer.borderColor = UIColor.lightGray.cgColor
+//        selectButton.layer.borderWidth = 1
+//        selectButton.layer.cornerRadius = 6
+//        selectButton.clipsToBounds = true
+        if selectButton != nil {
+            selectButton.setTitle("Select", for: .normal)
+            selectButton.setTitle("Selected", for: .selected)
+        }
     }
     
     

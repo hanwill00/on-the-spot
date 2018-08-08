@@ -20,11 +20,12 @@ class DisplayAddHangoutViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIBarButtonItem!
-    
     @IBOutlet weak var HangoutInfoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.allowsMultipleSelection = true;
+
         setupViews()
         let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
         tap.cancelsTouchesInView = false
@@ -109,10 +110,7 @@ extension DisplayAddHangoutViewController: UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCell") as! FriendsTableViewCell
         configure(cell: cell, atIndexPath: indexPath)
-        
-        cell.selectButton.tag = indexPath.row
-        
-        cell.selectButton.addTarget(self, action: #selector(didTapSelectButton(_:)), for: .touchUpInside)
+    
         
         return cell
     }
@@ -136,21 +134,31 @@ extension DisplayAddHangoutViewController: UITableViewDataSource, UITableViewDel
         
     }
     
-    
-    
-    @objc func didTapSelectButton(_ selectButton: UIButton) {
-        let index = selectButton.tag
-        
-        let friend = friends[index]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let friend = friends[indexPath.row]
+        let currentCell = tableView.cellForRow(at: indexPath) as! FriendsTableViewCell
         if invitedFriends[friend.uid] == true {
             invitedFriends[friend.uid] = nil
-            selectButton.isSelected = false
+            currentCell.setSelected(true, animated: true)
         } else {
             invitedFriends[friend.uid] = true
-            selectButton.isSelected = true
+            
         }
-
     }
+    
+//    @objc func didTapSelectButton(_ selectButton: UIButton) {
+//        let index = selectButton.tag
+//        
+//        let friend = friends[index]
+//        if invitedFriends[friend.uid] == true {
+//            invitedFriends[friend.uid] = nil
+//            selectButton.isSelected = false
+//        } else {
+//            invitedFriends[friend.uid] = true
+//            selectButton.isSelected = true
+//        }
+
+//    }
     
     
     

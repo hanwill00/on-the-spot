@@ -24,10 +24,32 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var SignUpButton: UIButton!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
-        super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView() {
+        let border = CALayer()
+        let width = CGFloat(1.0)
+        border.borderColor = UIColor.white.cgColor
+        border.frame = CGRect(x: 0, y: email.frame.size.height - width, width: email.frame.size.width, height: email.frame.size.height)
+        
+        border.borderWidth = width
+        email.layer.addSublayer(border)
+        email.layer.masksToBounds = true
+        
+        let border2 = CALayer()
+        let width2 = CGFloat(1.0)
+        border2.borderColor = UIColor.white.cgColor
+        border2.frame = CGRect(x: 0, y: email.frame.size.height - width2, width: email.frame.size.width, height: email.frame.size.height)
+        
+        border2.borderWidth = width2
+        password.layer.addSublayer(border2)
+        password.layer.masksToBounds = true
+        
     }
     
     override func didReceiveMemoryWarning() {
