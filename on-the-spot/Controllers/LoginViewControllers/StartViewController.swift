@@ -22,6 +22,11 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override open var shouldAutorotate: Bool {
+        return false
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,7 +35,14 @@ class StartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
+        AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
     }
     
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {

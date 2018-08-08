@@ -33,6 +33,7 @@
 		BE90183C21063333000800F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE90183A21063333000800F4 /* LaunchScreen.storyboard */; };
 		BEB5D0842114C9AC00613439 /* DisplayInvitedHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5D0832114C9AC00613439 /* DisplayInvitedHangoutViewController.swift */; };
 		BEB5D0862114F5F400613439 /* DisplayCreatedHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5D0852114F5F400613439 /* DisplayCreatedHangoutViewController.swift */; };
+		BED4220B211A5504005E986E /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED4220A211A5504005E986E /* AppUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		BE90183D21063333000800F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB5D0832114C9AC00613439 /* DisplayInvitedHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInvitedHangoutViewController.swift; sourceTree = "<group>"; };
 		BEB5D0852114F5F400613439 /* DisplayCreatedHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCreatedHangoutViewController.swift; sourceTree = "<group>"; };
+		BED4220A211A5504005E986E /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				BE11E89D210E38CA002CCD29 /* HangoutService.swift */,
 				BE6C72F821093A54004630D4 /* UserService.swift */,
 				BE6C72F621093777004630D4 /* FriendService.swift */,
+				BED4220A211A5504005E986E /* AppUtility.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				BE6C72F52109259F004630D4 /* User.swift in Sources */,
 				BE6C72F921093A54004630D4 /* UserService.swift in Sources */,
 				BE6C72F721093777004630D4 /* FriendService.swift in Sources */,
+				BED4220B211A5504005E986E /* AppUtility.swift in Sources */,
 				BE9018322106332B000800F4 /* AppDelegate.swift in Sources */,
 				BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */,
 				BEB5D0862114F5F400613439 /* DisplayCreatedHangoutViewController.swift in Sources */,

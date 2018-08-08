@@ -22,6 +22,17 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var SignUpButton: UIButton!
     
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
+    }
     
     override func viewDidLoad() {
         let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))

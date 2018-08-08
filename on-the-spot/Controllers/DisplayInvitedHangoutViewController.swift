@@ -37,10 +37,12 @@
         @IBOutlet weak var invitedTableView: UITableView!
         
         @IBOutlet weak var goingTableView: UITableView!
+        @IBOutlet weak var HangoutInfoView: UIView!
         
         override func viewDidLoad() {
             
             super.viewDidLoad()
+            setupViews()
             
             let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
             tap.cancelsTouchesInView = false
@@ -48,8 +50,49 @@
 
         }
         
+        func setupViews() {
+            invitedTableView.layer.shadowOffset = CGSize(width: 0, height: 1)
+            invitedTableView.layer.shadowOpacity = 0.05
+            invitedTableView.layer.shadowColor = UIColor.black.cgColor
+            invitedTableView.layer.shadowRadius = 35
+            invitedTableView.layer.cornerRadius = 8
+            invitedTableView.layer.masksToBounds = true
+            
+            goingTableView.layer.shadowOffset = CGSize(width: 0, height: 1)
+            goingTableView.layer.shadowOpacity = 0.05
+            goingTableView.layer.shadowColor = UIColor.black.cgColor
+            goingTableView.layer.shadowRadius = 35
+            goingTableView.layer.cornerRadius = 8
+            goingTableView.layer.masksToBounds = true
+            
+            RSVPButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+            RSVPButton.layer.shadowOpacity = 0.05
+            RSVPButton.layer.shadowColor = UIColor.black.cgColor
+            RSVPButton.layer.shadowRadius = 35
+            RSVPButton.layer.cornerRadius = 8
+            RSVPButton.layer.masksToBounds = true
+
+            
+            HangoutInfoView.layer.shadowOffset = CGSize(width: 0, height: 1)
+            HangoutInfoView.layer.shadowOpacity = 0.05
+            HangoutInfoView.layer.shadowColor = UIColor.black.cgColor
+            HangoutInfoView.layer.shadowRadius = 35
+            HangoutInfoView.layer.cornerRadius = 8
+            HangoutInfoView.layer.masksToBounds = true
+            
+        }
+        
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            
+            // Don't forget to reset when view is being removed
+            AppUtility.lockOrientation(.all)
+        }
+        
+        
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
+            AppUtility.lockOrientation(.portrait)
             if let hangout = hangout {
                 // 2
                 hangoutName.text = hangout.name
@@ -74,27 +117,23 @@
                     self.goingTableView.reloadData()
                 }
                 if let hangout = self.hangout {
-                    if self.goingFriends.count == hangout.maxCap {
-                        self.RSVPButton.isEnabled = false
+                    
+                    let ref = Database.database().reference().child("users").child(User.current.uid).child("hangouts").child(hangout.key!)
+                    ref.observeSingleEvent(of: .value) { (snapshot) in
+                        let jsonSnapshot = JSON(snapshot.value)
+                        if jsonSnapshot["going"].boolValue{
+                            self.RSVPButton.setTitle("Un-RSVP", for: .normal)
+                        }else{
+                            self.RSVPButton.setTitle("RSVP", for: .normal)
+                            if let hangout = self.hangout {
+                                if self.goingFriends.count == hangout.maxCap  {
+                                    self.RSVPButton.isEnabled = false
+                                }
+                            }
+                        }
                     }
                 }
             }
-            if let hangout = hangout {
-
-                let ref = Database.database().reference().child("users").child(User.current.uid).child("hangouts").child(hangout.key!)
-                ref.observeSingleEvent(of: .value) { (snapshot) in
-                    let jsonSnapshot = JSON(snapshot.value)
-                    if jsonSnapshot["going"].boolValue{
-                        self.RSVPButton.setTitle("Un-RSVP", for: .normal)
-                    }else{
-                        self.RSVPButton.setTitle("RSVP", for: .normal)
-
-                    }
-                }
-            }
-            
-            
-            
         }
         
         @IBAction func RSVPButtonTapped(_ sender: UIButton) {
@@ -195,8 +234,6 @@
         
         
         @objc func didTapSelectButton(_ selectButton: UIButton) {
-            print("hello")
-            
             let index = selectButton.tag
             
             let friend = friends[index]

@@ -24,15 +24,25 @@ class DisplayAddHangoutViewController: UIViewController {
     @IBOutlet weak var HangoutInfoView: UIView!
     
     override func viewDidLoad() {
-
+        super.viewDidLoad()
+        setupViews()
         let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
-        super.viewDidLoad()
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+
         super.viewWillAppear(animated)
+        AppUtility.lockOrientation(.portrait)
         if let hangout = hangout {
             // 2
             hangoutName.text = hangout.name
@@ -50,20 +60,24 @@ class DisplayAddHangoutViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
-//                setupViews()
+
     }
     
-//    func setupViews() {
-//        HangoutInfoView.layer.shadowOffset = CGSize(width: 0, height: 1)
-//        HangoutInfoView.layer.shadowOpacity = 0.05
-//        HangoutInfoView.layer.shadowColor = UIColor.black.cgColor
-//        HangoutInfoView.layer.shadowRadius = 35
-//        HangoutInfoView.layer.cornerRadius = 8
-//        HangoutInfoView.layer.masksToBounds = true
-//
-//        hangoutName.layer.cornerRadius = 5
-//        hangoutName.layer.masksToBounds = true
-//    }
+    func setupViews() {
+        tableView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        tableView.layer.shadowOpacity = 0.05
+        tableView.layer.shadowColor = UIColor.black.cgColor
+        tableView.layer.shadowRadius = 35
+        tableView.layer.cornerRadius = 8
+        tableView.layer.masksToBounds = true
+        
+        HangoutInfoView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        HangoutInfoView.layer.shadowOpacity = 0.05
+        HangoutInfoView.layer.shadowColor = UIColor.black.cgColor
+        HangoutInfoView.layer.shadowRadius = 35
+        HangoutInfoView.layer.cornerRadius = 8
+        HangoutInfoView.layer.masksToBounds = true
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -105,6 +119,14 @@ extension DisplayAddHangoutViewController: UITableViewDataSource, UITableViewDel
         let friend = friends[indexPath.row]
         
         cell.friendName.text = friend.name
+//
+//        cell.layer.cornerRadius = 8
+//        cell.layer.masksToBounds = true
+//
+//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        cell.layer.shadowColor = UIColor.black.cgColor
+//        cell.layer.shadowOpacity = 0.23
+//        cell.layer.shadowRadius = 4
 //        HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
 //            cell.selectButton.isSelected = isInvited
 //        }

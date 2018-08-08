@@ -34,6 +34,17 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
+    }
     
     
     @IBAction func loginAction(_ sender: Any) {

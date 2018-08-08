@@ -42,11 +42,16 @@ class HomeTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        
+        super.viewWillAppear(animated)
+        AppUtility.lockOrientation(.portrait)
         if let user = Auth.auth().currentUser {
             print(user)
             let rootRef = Database.database().reference()
