@@ -22,9 +22,27 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         
     }
     
+    func setupViews() {
+        LoginButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        LoginButton.layer.shadowOpacity = 0.05
+        LoginButton.layer.shadowColor = UIColor.black.cgColor
+        LoginButton.layer.shadowRadius = 35
+        LoginButton.layer.cornerRadius = 8
+        LoginButton.layer.masksToBounds = true
+        LoginButton.layer.borderWidth = 0.75
+        LoginButton.layer.borderColor = UIColor.white.cgColor
+        
+        SignUpButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        SignUpButton.layer.shadowOpacity = 0.05
+        SignUpButton.layer.shadowColor = UIColor.black.cgColor
+        SignUpButton.layer.shadowRadius = 35
+        SignUpButton.layer.cornerRadius = 8
+        SignUpButton.layer.masksToBounds = true
+    }
     override open var shouldAutorotate: Bool {
         return false
     }

@@ -97,7 +97,7 @@
                                 <segment title="Created"/>
                                 <segment title="Invited"/>
                             </segments>
-                            <color key="tintColor" red="0.041946577007014728" green="0.034830049594564115" blue="0.76068765862944165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.043137254901960784" green="0.035294117647058823" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="segmentedControlChanged:" destination="uan-zy-4eS" eventType="valueChanged" id="4pl-Mb-Cth"/>
                             </connections>

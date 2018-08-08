@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,47 +19,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOl-Be-Dna">
-                                <rect key="frame" x="0.0" y="459" width="375" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.85412039974619292" green="0.21409879658102079" blue="0.10519706579059808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="22"/>
-                                <state key="normal" title="LOGIN">
-                                    <color key="titleColor" red="1" green="0.99806626737117765" blue="0.99495548009872437" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YcF-zG-ueX" kind="show" identifier="startToLogin" id="SRU-16-mjc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0U-8b-IXK">
-                                <rect key="frame" x="0.0" y="522" width="375" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.14555877610084883" green="0.07254715172116144" blue="0.86052506345177671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="22"/>
-                                <state key="normal" title="SIGN UP">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="nYU-aD-iSh" kind="show" id="Vhw-Sj-wUB"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4ip-70-PlR">
-                                <rect key="frame" x="139" y="260" width="96" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OnTheSpot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od0-1T-8zl">
-                                <rect key="frame" x="60" y="173" width="238" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="45"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="inverted-logo" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-1a-Zje">
-                                <rect key="frame" x="287" y="163" width="28" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ERa-9Z-XpE">
+                                <rect key="frame" x="33" y="493" width="308" height="109"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOl-Be-Dna">
+                                        <rect key="frame" x="0.0" y="0.0" width="308" height="47"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="PmV-H6-FTH"/>
+                                            <constraint firstAttribute="width" constant="308" id="lyn-F1-CJc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <state key="normal" title="LOGIN">
+                                            <color key="titleColor" red="1" green="0.99806626737117765" blue="0.99495548009872437" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="YcF-zG-ueX" kind="show" identifier="startToLogin" id="SRU-16-mjc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0U-8b-IXK">
+                                        <rect key="frame" x="0.0" y="62" width="308" height="47"/>
+                                        <color key="backgroundColor" red="0.043137254901960784" green="0.035294117647058823" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="V9E-dO-aDb"/>
+                                            <constraint firstAttribute="width" constant="308" id="YS8-vB-Mfh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <state key="normal" title="SIGN UP">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="nYU-aD-iSh" kind="show" id="Vhw-Sj-wUB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T0U-8b-IXK" firstAttribute="width" secondItem="wOl-Be-Dna" secondAttribute="width" id="ULE-f9-Rlk"/>
+                                    <constraint firstItem="T0U-8b-IXK" firstAttribute="height" secondItem="wOl-Be-Dna" secondAttribute="height" id="uT5-iY-w5o"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bzF-Xd-yi8">
+                                <rect key="frame" x="38" y="162" width="297.5" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OnTheSpot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od0-1T-8zl">
+                                        <rect key="frame" x="0.0" y="0.0" width="265.5" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Od0-1T-8zl" secondAttribute="height" multiplier="265:64" id="J6l-ou-3pD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="53"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inverted-logo" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-1a-Zje">
+                                        <rect key="frame" x="269.5" y="0.0" width="28" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xfb-1a-Zje" secondAttribute="height" multiplier="14:25" id="DEa-pe-LKk"/>
+                                            <constraint firstAttribute="width" constant="28" id="Pux-ul-yRK"/>
+                                            <constraint firstAttribute="height" constant="50" id="Sud-eF-g2N"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4ip-70-PlR">
+                                <rect key="frame" x="139" y="249" width="96" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="THI-iQ-UWq"/>
+                                    <constraint firstAttribute="height" constant="168" id="zGO-Pl-1w3"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ERa-9Z-XpE" firstAttribute="top" secondItem="4ip-70-PlR" secondAttribute="bottom" constant="76" id="Ivj-sF-w8d"/>
+                            <constraint firstItem="4ip-70-PlR" firstAttribute="centerX" secondItem="P5x-A4-3Zg" secondAttribute="centerX" id="OTR-bN-7de"/>
+                            <constraint firstItem="4ip-70-PlR" firstAttribute="centerY" secondItem="P5x-A4-3Zg" secondAttribute="centerY" id="Uzd-9j-AKw"/>
+                            <constraint firstItem="ERa-9Z-XpE" firstAttribute="centerX" secondItem="P5x-A4-3Zg" secondAttribute="centerX" id="W4k-Pe-Qkm"/>
+                            <constraint firstItem="bzF-Xd-yi8" firstAttribute="centerX" secondItem="P5x-A4-3Zg" secondAttribute="centerX" id="iga-AO-Hmb"/>
+                            <constraint firstItem="4ip-70-PlR" firstAttribute="top" secondItem="bzF-Xd-yi8" secondAttribute="bottom" constant="23" id="rpf-47-gpJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rZW-UE-wdj"/>
                     </view>
                     <navigationItem key="navigationItem" id="BqV-FR-FZC"/>
@@ -309,7 +347,7 @@
         <image name="logo" width="204" height="384"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RzP-Zn-PQj"/>
-        <segue reference="Vhw-Sj-wUB"/>
+        <segue reference="k4W-ls-P7x"/>
+        <segue reference="U7K-Lc-R1e"/>
     </inferredMetricsTieBreakers>
 </document>
