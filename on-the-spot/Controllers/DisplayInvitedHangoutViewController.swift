@@ -29,13 +29,9 @@
         }
         
         @IBOutlet weak var hangoutName: UILabel!
-        
         @IBOutlet weak var maxCap: UILabel!
-        
         @IBOutlet weak var RSVPButton: UIButton!
-        
         @IBOutlet weak var invitedTableView: UITableView!
-        
         @IBOutlet weak var goingTableView: UITableView!
         @IBOutlet weak var HangoutInfoView: UIView!
         
@@ -84,8 +80,6 @@
         
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-            
-            // Don't forget to reset when view is being removed
             AppUtility.lockOrientation(.all)
         }
         
@@ -94,22 +88,18 @@
             super.viewWillAppear(animated)
             AppUtility.lockOrientation(.portrait)
             if let hangout = hangout {
-                // 2
                 hangoutName.text = hangout.name
                 maxCap.text = String(hangout.maxCap)
             } else {
-                // 3
                 hangoutName.text = ""
                 maxCap.text = ""
             }
             
             FriendService.getFriends { [unowned self] (friends) in
                 self.friends = friends
-                print(friends)
                 DispatchQueue.main.async {
                     self.invitedTableView.reloadData()
                 }
-
             }
             FriendService.getGoingFriends(self.hangout!) { [unowned self] (goingFriends) in
                 self.goingFriends = goingFriends
@@ -117,7 +107,6 @@
                     self.goingTableView.reloadData()
                 }
                 if let hangout = self.hangout {
-                    
                     let ref = Database.database().reference().child("users").child(User.current.uid).child("hangouts").child(hangout.key!)
                     ref.observeSingleEvent(of: .value) { (snapshot) in
                         let jsonSnapshot = JSON(snapshot.value)
@@ -192,8 +181,8 @@
             if tableView == self.invitedTableView {
                 friendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FriendsTableViewCell") as! FriendsTableViewCell
                 configureInvited(cell: friendsTableViewCell as! FriendsTableViewCell, atIndexPath: indexPath)
-                friendsTableViewCell?.selectButton.tag = indexPath.row
-                friendsTableViewCell?.selectButton.addTarget(self, action: #selector(didTapSelectButton(_:)), for: .touchUpInside)
+//                friendsTableViewCell?.selectButton.tag = indexPath.row
+//                friendsTableViewCell?.selectButton.addTarget(self, action: #selector(didTapSelectButton(_:)), for: .touchUpInside)
                 if let friendsTableViewCell = friendsTableViewCell {
                     return friendsTableViewCell as! UITableViewCell
                 }
@@ -215,41 +204,24 @@
 //            HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
 //                cell.selectButton.isSelected = isInvited
 //            }
-            //
-            
         }
 
         
         func configureGoing(cell: GoingFriendsTableViewCell, atIndexPath indexPath: IndexPath) {
             let goingFriend = goingFriends[indexPath.row]
-            
             cell.friendName.text = goingFriend.name
-
         }
         
-        
-        
-        @objc func didTapSelectButton(_ selectButton: UIButton) {
-            let index = selectButton.tag
-            
-            let friend = friends[index]
-            if invitedFriends[friend.uid] == true {
-                invitedFriends[friend.uid] = nil
-                selectButton.isSelected = false
-            } else {
-                invitedFriends[friend.uid] = true
-                selectButton.isSelected = true
-            }
-        }
+//        @objc func didTapSelectButton(_ selectButton: UIButton) {
+//            let index = selectButton.tag
+//
+//            let friend = friends[index]
+//            if invitedFriends[friend.uid] == true {
+//                invitedFriends[friend.uid] = nil
+//                selectButton.isSelected = false
+//            } else {
+//                invitedFriends[friend.uid] = true
+//                selectButton.isSelected = true
+//            }
+//        }
     }
-    
-    //extension DisplayHangoutViewController: FriendsTableViewCellDelegate {
-    //   @objc func didTapSelectButton(_ selectButton: UIButton) {
-    //        print("hello")
-    //        guard let indexPath = tableView.indexPath(for: cell) else { return }
-    //        let friend = friends[indexPath.row]
-    //        invitedFriends[friend.uid] = true
-    //    }
-    //
-    //
-    //}

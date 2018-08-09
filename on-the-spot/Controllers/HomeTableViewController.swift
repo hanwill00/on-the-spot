@@ -16,9 +16,6 @@ import SnapKit
 
 
 class HomeTableViewController: UITableViewController {
-    
-    
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var createdHangouts = [Hangout]() {
@@ -53,17 +50,14 @@ class HomeTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         AppUtility.lockOrientation(.portrait)
         if let user = Auth.auth().currentUser {
-            print(user)
             let rootRef = Database.database().reference()
             let userRef = rootRef.child("users").child(user.uid)
             userRef.observeSingleEvent(of: .value, with: { (snapshot) in
-                print(snapshot)
                 if let user = User(snapshot: snapshot) {
                     User.setCurrent(user)
                     
                     HangoutService.getUserCreatedHangouts { [unowned self] (hangouts) in
                         self.createdHangouts = hangouts
-                        print(self.createdHangouts)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -71,7 +65,6 @@ class HomeTableViewController: UITableViewController {
                     
                     HangoutService.getUserInvitedHangouts { [unowned self] (hangouts) in
                         self.invitedHangouts = hangouts
-                        print(self.invitedHangouts)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -79,7 +72,6 @@ class HomeTableViewController: UITableViewController {
                 }
             })
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,21 +79,19 @@ class HomeTableViewController: UITableViewController {
         
         switch identifier {
         case "displayCreatedHangout":
-            // 1
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let hangout = createdHangouts[indexPath.row]
             let destination = segue.destination as! DisplayCreatedHangoutViewController
             destination.hangout = hangout
             
         case "displayInvitedHangout":
-            // 1
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let hangout = invitedHangouts[indexPath.row]
             let destination = segue.destination as! DisplayInvitedHangoutViewController
             destination.hangout = hangout
 
             
-        case "addNote":
+        case "addHangout":
             print("create note bar button item tapped")
             
         default:

@@ -34,7 +34,6 @@ class Hangout {
     }
     
     init?(snapshot: DataSnapshot) {
-        print(snapshot)
         guard let dict = snapshot.value as? [String : AnyObject] else { return nil }
 
         self.maxCap = dict["maxCap"] as! Int

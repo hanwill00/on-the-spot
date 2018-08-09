@@ -35,8 +35,6 @@ class DisplayAddHangoutViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Don't forget to reset when view is being removed
         AppUtility.lockOrientation(.all)
     }
     
@@ -45,18 +43,15 @@ class DisplayAddHangoutViewController: UIViewController {
         super.viewWillAppear(animated)
         AppUtility.lockOrientation(.portrait)
         if let hangout = hangout {
-            // 2
             hangoutName.text = hangout.name
             maxCap.text = String(hangout.maxCap)
         } else {
-            // 3
             hangoutName.text = ""
             maxCap.text = ""
         }
 
         FriendService.getFriends { [unowned self] (friends) in
             self.friends = friends
-            print(friends)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

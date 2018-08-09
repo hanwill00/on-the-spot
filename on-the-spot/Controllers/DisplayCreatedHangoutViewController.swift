@@ -58,12 +58,12 @@
             HangoutInfoView.layer.shadowRadius = 35
             HangoutInfoView.layer.cornerRadius = 8
             HangoutInfoView.layer.masksToBounds = true
+            
+            hangoutName.borderStyle = UITextBorderStyle.roundedRect
         }
         
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-            
-            // Don't forget to reset when view is being removed
             AppUtility.lockOrientation(.all)
         }
         
@@ -71,18 +71,15 @@
             super.viewWillAppear(animated)
             AppUtility.lockOrientation(.portrait)
             if let hangout = hangout {
-                // 2
                 hangoutName.text = hangout.name
                 maxCap.text = String(hangout.maxCap)
             } else {
-                // 3
                 hangoutName.text = ""
                 maxCap.text = ""
             }
             
             FriendService.getFriends { [unowned self] (friends) in
                 self.friends = friends
-                print(friends)
                 DispatchQueue.main.async {
                     self.invitedTableView.reloadData()
                 }
@@ -143,10 +140,10 @@
             let friend = friends[indexPath.row]
             
             cell.friendName.text = friend.name
-            //        HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
-            //            cell.selectButton.isSelected = isInvited
-            //        }
-            //
+                    HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
+                        cell.selectButton.isSelected = isInvited
+                    }
+            
             
         }
         
@@ -155,16 +152,12 @@
             let goingFriend = goingFriends[indexPath.row]
             
             cell.friendName.text = goingFriend.name
-            //        HangoutService.isInvited(friend, hangout: hangout!) { (isInvited) in
-            //            cell.selectButton.isSelected = isInvited
-            //        }
-            //
+
+            
             
         }
         
         @objc func didTapSelectButton(_ selectButton: UIButton) {
-            print("hello")
-            
             let index = selectButton.tag
             
             let friend = friends[index]
@@ -181,14 +174,3 @@
         
         
     }
-    
-    //extension DisplayHangoutViewController: FriendsTableViewCellDelegate {
-    //   @objc func didTapSelectButton(_ selectButton: UIButton) {
-    //        print("hello")
-    //        guard let indexPath = tableView.indexPath(for: cell) else { return }
-    //        let friend = friends[indexPath.row]
-    //        invitedFriends[friend.uid] = true
-    //    }
-    //
-    //
-    //}

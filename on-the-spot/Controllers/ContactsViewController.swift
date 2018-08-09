@@ -19,13 +19,6 @@ class ContactsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
-//        let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "SideBarViewController") as! UISideMenuNavigationController
-//        // UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration
-//        // of it here like setting its viewControllers. If you're using storyboards, you'll want to do something like:
-//        // let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
-//        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        
-        
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 71
@@ -33,8 +26,6 @@ class ContactsViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Don't forget to reset when view is being removed
         AppUtility.lockOrientation(.all)
     }
     
@@ -44,7 +35,6 @@ class ContactsViewController: UIViewController {
 
         UserService.usersExcludingCurrentUser { [unowned self] (users) in
             self.users = users
-            print(users)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

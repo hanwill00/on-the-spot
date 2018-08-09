@@ -32,6 +32,16 @@ class LoginViewController: UIViewController {
     }
     
     func setupView() {
+
+        LoginButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        LoginButton.layer.shadowOpacity = 0.05
+        LoginButton.layer.shadowColor = UIColor.black.cgColor
+        LoginButton.layer.shadowRadius = 35
+        LoginButton.layer.cornerRadius = 8
+        LoginButton.layer.masksToBounds = true
+        LoginButton.layer.borderWidth = 0.75
+        
+        
         let border = CALayer()
         let width = CGFloat(1.0)
         border.borderColor = UIColor.white.cgColor
@@ -63,8 +73,6 @@ class LoginViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Don't forget to reset when view is being removed
         AppUtility.lockOrientation(.all)
     }
     
@@ -73,16 +81,12 @@ class LoginViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil{
-                print("lel1")
                 if let user = Auth.auth().currentUser {
-                    print("lel2")
                     let rootRef = Database.database().reference()
                     let userRef = rootRef.child("users").child(user.uid)
                     userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
-                        print(snapshot)
                         if let user = User(snapshot: snapshot) {
                             User.setCurrent(user)
-                            print("lel4")
                         }
                     })
                 }

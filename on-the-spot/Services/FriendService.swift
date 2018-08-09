@@ -15,17 +15,11 @@ struct FriendService {
         let currentUID = User.current.uid
         let friendData = ["friends/\(user.uid)/\(currentUID)" : true,
                           "friends/\(currentUID)/\(user.uid)" : true]
-        
-        
-
-        // 2
         let ref = Database.database().reference()
         ref.updateChildValues(friendData) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
             }
-
-            // 3
             success(error == nil)
         }
     }
@@ -34,15 +28,11 @@ struct FriendService {
         let currentUID = User.current.uid
         let friendData = ["friends/\(user.uid)/\(currentUID)" : NSNull(),
                           "friends/\(currentUID)/\(user.uid)" : NSNull()]
-        
-        // 2
         let ref = Database.database().reference()
         ref.updateChildValues(friendData) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
             }
-            
-            // 3
             success(error == nil)
         }
     }
@@ -77,7 +67,6 @@ struct FriendService {
             let json = JSON(value)
             var ids = [String]()
             for (key, subJson) in json {
-                print(key)
                 ids.append(key)
             }
             let dg = DispatchGroup()
@@ -111,7 +100,6 @@ struct FriendService {
             var goingFriends = [User]()
             for id in userUIDs {
                 dg2.enter()
-                print(id)
                 let userRef = Database.database().reference().child("users").child(id)
                 userRef.observeSingleEvent(of: .value, with: { (snapshot) in
                     let jsonSnapshot = JSON(snapshot.value)

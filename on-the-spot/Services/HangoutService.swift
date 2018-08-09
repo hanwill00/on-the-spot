@@ -18,7 +18,6 @@ struct HangoutService {
         let currentUser = User.current
         let hangout = Hangout(name: name, maxCap: maxCap)
         let dict = hangout.dictValue
-        print("in Hangout Service")
         //currenUserHangoutRef = reference to hangout id under hangouts under current user ID
        
         
@@ -71,8 +70,6 @@ struct HangoutService {
             }
         }
     }
-        
-        //Updating hangout information under hangout key
     
     static func setGoing(_ hangout: Hangout, user: User) -> () {
         let ref = Database.database().reference().child("users").child(user.uid).child("hangouts").child(hangout.key!)
@@ -95,13 +92,9 @@ struct HangoutService {
             
             //remove from each invited user's tree
             hangoutInvitesRef.observeSingleEvent(of: .value, with: { (snapshot) in
-//                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
-//                    else {return}
                 let jsonSnapshot = JSON(snapshot.value)
                 var userUIDs = [String]()
-                print("PRINTING")
                 for (key, subJson) in jsonSnapshot {
-                    print(key)
                     userUIDs.append(key)
                 }
                 
@@ -132,23 +125,18 @@ struct HangoutService {
             
         }
     }
-    static func inviteFriend(user: User, hangout: Hangout, completion: @escaping (Hangout?) -> ()) {
-        //let ref = Database.database().reference().child("hangouts").child(hangout.key)
-    }
+//    static func inviteFriend(user: User, hangout: Hangout, completion: @escaping (Hangout?) -> ()) {
+//        let ref = Database.database().reference().child("hangouts").child(hangout.key)
+//    }
 
     
     static func getUserCreatedHangouts(completion: @escaping ([Hangout]) -> Void) {
         let currentUser = User.current
         let hangoutsRef = Database.database().reference().child("users").child(currentUser.uid).child("hangouts")
         hangoutsRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            //            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
-            //
-            //                else {return completion([])}
             let jsonSnapshot = JSON(snapshot.value)
             var hangoutKeys = [String]()
             for (key, subJson) in jsonSnapshot {
-                print(key)
-
                 let createdBoolean = subJson["created"].boolValue
                 if createdBoolean {
                     hangoutKeys.append(key)
@@ -163,7 +151,6 @@ struct HangoutService {
                 dg.enter()
                 let ref = Database.database().reference().child("Hangouts").child(key)
                 ref.observeSingleEvent(of: .value, with: { (snapshot) in
-
                     let hangout = Hangout(snapshot: snapshot)
                     usersHangouts.append(hangout!)
                     dg.leave()
@@ -183,7 +170,6 @@ struct HangoutService {
             let jsonSnapshot = JSON(snapshot.value)
             var hangoutKeys = [String]()
             for (key, subJson) in jsonSnapshot {
-                print(key)
                 
                 let createdBoolean = subJson["created"].boolValue
                 if !createdBoolean {
@@ -237,25 +223,13 @@ struct HangoutService {
             hangoutRef.observeSingleEvent(of: .value) { (snapshot) in
                 let jsonSnapshot = JSON(snapshot.value)
                 for (key, subJson) in jsonSnapshot {
-
                     if key == user.uid {
                         userFound = true
                         completion(userFound)
                     }
-
                 }
                 completion(false)
-                
             }
-           
         }
-
-        
     }
-
-    //isInvited function returning bool
-    //RSVP function -- pass in true or false (response)
-    //RetrieveAllHangoutsForUser
-    //
-    
 }

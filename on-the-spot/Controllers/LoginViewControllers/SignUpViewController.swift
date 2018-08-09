@@ -29,8 +29,6 @@ class SignupViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Don't forget to reset when view is being removed
         AppUtility.lockOrientation(.all)
     }
     
@@ -43,6 +41,14 @@ class SignupViewController: UIViewController {
     }
     
     func setupView() {
+        SignUpButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        SignUpButton.layer.shadowOpacity = 0.05
+        SignUpButton.layer.shadowColor = UIColor.black.cgColor
+        SignUpButton.layer.shadowRadius = 35
+        SignUpButton.layer.cornerRadius = 8
+        SignUpButton.layer.masksToBounds = true
+        SignUpButton.layer.borderWidth = 0.75
+        
         let border = CALayer()
         let width = CGFloat(1.0)
         border.borderColor = UIColor.white.cgColor
@@ -89,10 +95,8 @@ class SignupViewController: UIViewController {
                 let rootRef = Database.database().reference()
                 let userRef = rootRef.child("users").child(firUser.uid)
                 userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
-                    print(snapshot)
                     if let firUser = User(snapshot: snapshot) {
                         User.setCurrent(firUser)
-                        print("lel4")
                     }
                 })
                 self.performSegue(withIdentifier: "signupToHome", sender: self)

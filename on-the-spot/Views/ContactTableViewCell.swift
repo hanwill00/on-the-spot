@@ -24,8 +24,6 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet var FriendButton: UIButton!
     
     override func awakeFromNib() {
-        
-        
         super.awakeFromNib()
         
         FriendButton.layer.borderColor = UIColor.lightGray.cgColor
