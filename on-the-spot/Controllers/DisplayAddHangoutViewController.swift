@@ -25,12 +25,32 @@ class DisplayAddHangoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.allowsMultipleSelection = true;
-
+        
+        sendButton.isEnabled = false
+        [hangoutName, maxCap].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
+        
         setupViews()
         let tap = UITapGestureRecognizer(target: self.view, action: Selector("endEditing:"))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
 
+    }
+    
+    @objc func editingChanged(_ textField: UITextField) {
+        if textField.text?.characters.count == 1 {
+            if textField.text?.characters.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let hangoutName = hangoutName.text, !hangoutName.isEmpty,
+            let maxCap = maxCap.text, !maxCap.isEmpty
+        else {
+            sendButton.isEnabled = false
+            return
+        }
+        sendButton.isEnabled = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {

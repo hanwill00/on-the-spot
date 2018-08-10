@@ -15,7 +15,6 @@
 		BE11E89C210B962D002CCD29 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89B210B962D002CCD29 /* FriendsTableViewCell.swift */; };
 		BE11E89E210E38CA002CCD29 /* HangoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89D210E38CA002CCD29 /* HangoutService.swift */; };
 		BE11E8A0210E39A5002CCD29 /* Hangout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89F210E39A5002CCD29 /* Hangout.swift */; };
-		BE23579B21069EFB00EE9D2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE23579A21069EFB00EE9D2C /* GoogleService-Info.plist */; };
 		BE23579D2107839000EE9D2C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE23579C2107839000EE9D2C /* Login.storyboard */; };
 		BE23579F210783DB00EE9D2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE23579E210783DB00EE9D2C /* LoginViewController.swift */; };
 		BE2357A1210794DC00EE9D2C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357A0210794DC00EE9D2C /* StartViewController.swift */; };
@@ -24,6 +23,7 @@
 		BE2357AB2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AA2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift */; };
 		BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */; };
 		BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */; };
+		BE644520211E57B200FFC515 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE23579A21069EFB00EE9D2C /* GoogleService-Info.plist */; };
 		BE6C72F52109259F004630D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F42109259F004630D4 /* User.swift */; };
 		BE6C72F721093777004630D4 /* FriendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F621093777004630D4 /* FriendService.swift */; };
 		BE6C72F921093A54004630D4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F821093A54004630D4 /* UserService.swift */; };
@@ -287,8 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE90183C21063333000800F4 /* LaunchScreen.storyboard in Resources */,
-				BE23579B21069EFB00EE9D2C /* GoogleService-Info.plist in Resources */,
 				BE90183921063333000800F4 /* Assets.xcassets in Resources */,
+				BE644520211E57B200FFC515 /* GoogleService-Info.plist in Resources */,
 				BE23579D2107839000EE9D2C /* Login.storyboard in Resources */,
 				BE9018372106332B000800F4 /* Main.storyboard in Resources */,
 			);
@@ -561,7 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot.testing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -584,7 +584,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot.testing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
