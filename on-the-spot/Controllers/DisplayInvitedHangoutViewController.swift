@@ -95,7 +95,7 @@
                 maxCap.text = ""
             }
             
-            FriendService.getFriends { [unowned self] (friends) in
+            HangoutService.getInvitedUsers(self.hangout!) { [unowned self] (friends) in
                 self.friends = friends
                 DispatchQueue.main.async {
                     self.invitedTableView.reloadData()
@@ -124,6 +124,7 @@
                 }
             }
         }
+        
         
         @IBAction func RSVPButtonTapped(_ sender: UIButton) {
             let currentUserUID = User.current.uid

@@ -215,10 +215,41 @@ struct HangoutService {
         })
     }
 
+    static func getInvitedUsers(_ hangout: Hangout, completion: @escaping ([User]) -> Void) {
+        if let hangoutKey = hangout.key {
+            let hangoutRef = Database.database().reference().child("Hangouts").child(hangoutKey).child("invites")
+            hangoutRef.observeSingleEvent(of: .value) { (snapshot) in
+                let jsonSnapshot = JSON(snapshot.value)
+                var userUIDs = [String]()
+                for (key, _) in jsonSnapshot {
+                    userUIDs.append(key)
+                }
+                
+                let dg = DispatchGroup()
+                var users = [User]()
+                //key is all of the hangouts under currentUser.uid
+                for id in userUIDs {
+                    dg.enter()
+                    let ref = Database.database().reference().child("users").child(id)
+                    ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                        let user = User(snapshot: snapshot)
+                        users.append(user!)
+                        dg.leave()
+                    })
+                    dg.notify(queue: .main, execute: {
+                        completion(users)
+                    })
+                    
+                }
+                
+            }
+        }
+    }
+
     
     static func isInvited(_ user: User, hangout: Hangout, completion: @escaping (Bool) -> Void ) {
-        if let hangoutkey = hangout.key {
-            let hangoutRef = Database.database().reference().child("hangouts").child(hangout.key!).child("invites")
+        if let hangoutKey = hangout.key {
+            let hangoutRef = Database.database().reference().child("hangouts").child(hangoutKey).child("invites")
             var userFound = false
             hangoutRef.observeSingleEvent(of: .value) { (snapshot) in
                 let jsonSnapshot = JSON(snapshot.value)
