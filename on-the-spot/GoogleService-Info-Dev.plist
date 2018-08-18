@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>319934682359-kmpbqt33g5tlji0in3md24i7qtg9i888.apps.googleusercontent.com</string>
+	<string>469734246451-frmvpmqkporo7ekugr5gsbiplommf872.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.319934682359-kmpbqt33g5tlji0in3md24i7qtg9i888</string>
+	<string>com.googleusercontent.apps.469734246451-frmvpmqkporo7ekugr5gsbiplommf872</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBG7LK0E4niXv7GmxmG10PMSi-yXFVPRYU</string>
+	<string>AIzaSyAibNlMbZudRiYnKnMR3z6gq6XIUCEnYj8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>319934682359</string>
+	<string>469734246451</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.will-han.on-the-spot</string>
+	<string>com.will-han.on-the-spot.testing</string>
 	<key>PROJECT_ID</key>
-	<string>on-the-spot-fcff7</string>
+	<string>on-the-spot-testing-ffe27</string>
 	<key>STORAGE_BUCKET</key>
-	<string>on-the-spot-fcff7.appspot.com</string>
+	<string>on-the-spot-testing-ffe27.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:319934682359:ios:6bc112820e1bda6c</string>
+	<string>1:469734246451:ios:985b744ede13bf40</string>
 	<key>DATABASE_URL</key>
-	<string>https://on-the-spot-fcff7.firebaseio.com</string>
+	<string>https://on-the-spot-testing-ffe27.firebaseio.com</string>
 </dict>
 </plist>

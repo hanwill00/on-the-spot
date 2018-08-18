@@ -24,10 +24,37 @@
 		BE2357AD2107EC0C00EE9D2C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */; };
 		BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */; };
 		BE644520211E57B200FFC515 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE23579A21069EFB00EE9D2C /* GoogleService-Info.plist */; };
+		BE64454E211E678F00FFC515 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E898210A8713002CCD29 /* ContactTableViewCell.swift */; };
+		BE64454F211E678F00FFC515 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357A72107E0EA00EE9D2C /* HomeTableViewController.swift */; };
+		BE644550211E678F00FFC515 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */; };
+		BE644551211E678F00FFC515 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89B210B962D002CCD29 /* FriendsTableViewCell.swift */; };
+		BE644552211E678F00FFC515 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE23579E210783DB00EE9D2C /* LoginViewController.swift */; };
+		BE644553211E678F00FFC515 /* GoingFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BB6C421165875007C2FC2 /* GoingFriendsTableViewCell.swift */; };
+		BE644554211E678F00FFC515 /* DisplayAddHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357AA2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift */; };
+		BE644555211E678F00FFC515 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357A0210794DC00EE9D2C /* StartViewController.swift */; };
+		BE644556211E678F00FFC515 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E895210A82B5002CCD29 /* ContactsViewController.swift */; };
+		BE644557211E678F00FFC515 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F42109259F004630D4 /* User.swift */; };
+		BE644558211E678F00FFC515 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F821093A54004630D4 /* UserService.swift */; };
+		BE644559211E678F00FFC515 /* FriendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F621093777004630D4 /* FriendService.swift */; };
+		BE64455A211E678F00FFC515 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED4220A211A5504005E986E /* AppUtility.swift */; };
+		BE64455B211E678F00FFC515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9018312106332B000800F4 /* AppDelegate.swift */; };
+		BE64455C211E678F00FFC515 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */; };
+		BE64455D211E678F00FFC515 /* DisplayCreatedHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5D0852114F5F400613439 /* DisplayCreatedHangoutViewController.swift */; };
+		BE64455E211E678F00FFC515 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2357A2210794F700EE9D2C /* SignUpViewController.swift */; };
+		BE64455F211E678F00FFC515 /* DisplayInvitedHangoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB5D0832114C9AC00613439 /* DisplayInvitedHangoutViewController.swift */; };
+		BE644560211E678F00FFC515 /* Hangout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89F210E39A5002CCD29 /* Hangout.swift */; };
+		BE644561211E678F00FFC515 /* HangoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11E89D210E38CA002CCD29 /* HangoutService.swift */; };
+		BE644563211E678F00FFC515 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE11E891210A7A15002CCD29 /* SideMenu.framework */; };
+		BE644564211E678F00FFC515 /* Pods_on_the_spot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225048BFC92DB27AC0286213 /* Pods_on_the_spot.framework */; };
+		BE644566211E678F00FFC515 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE90183A21063333000800F4 /* LaunchScreen.storyboard */; };
+		BE644567211E678F00FFC515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE90183821063333000800F4 /* Assets.xcassets */; };
+		BE644569211E678F00FFC515 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE23579C2107839000EE9D2C /* Login.storyboard */; };
+		BE64456A211E678F00FFC515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9018352106332B000800F4 /* Main.storyboard */; };
+		BE644579211E6B5A00FFC515 /* GoogleService-Info-Dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE644577211E6B5600FFC515 /* GoogleService-Info-Dev.plist */; };
+		BE64457A211F726800FFC515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9018312106332B000800F4 /* AppDelegate.swift */; };
 		BE6C72F52109259F004630D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F42109259F004630D4 /* User.swift */; };
 		BE6C72F721093777004630D4 /* FriendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F621093777004630D4 /* FriendService.swift */; };
 		BE6C72F921093A54004630D4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6C72F821093A54004630D4 /* UserService.swift */; };
-		BE9018322106332B000800F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9018312106332B000800F4 /* AppDelegate.swift */; };
 		BE9018372106332B000800F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9018352106332B000800F4 /* Main.storyboard */; };
 		BE90183921063333000800F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE90183821063333000800F4 /* Assets.xcassets */; };
 		BE90183C21063333000800F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE90183A21063333000800F4 /* LaunchScreen.storyboard */; };
@@ -56,6 +83,8 @@
 		BE2357AA2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAddHangoutViewController.swift; sourceTree = "<group>"; };
 		BE2357AC2107EC0C00EE9D2C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		BE2357B42108E2DA00EE9D2C /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
+		BE644571211E678F00FFC515 /* on-the-spot-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "on-the-spot-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE644577211E6B5600FFC515 /* GoogleService-Info-Dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Dev.plist"; sourceTree = "<group>"; };
 		BE6C72F42109259F004630D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE6C72F621093777004630D4 /* FriendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendService.swift; sourceTree = "<group>"; };
 		BE6C72F821093A54004630D4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -71,6 +100,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BE644562211E678F00FFC515 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE644563211E678F00FFC515 /* SideMenu.framework in Frameworks */,
+				BE644564211E678F00FFC515 /* Pods_on_the_spot.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE90182B2106332B000800F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				BE23579A21069EFB00EE9D2C /* GoogleService-Info.plist */,
+				BE644577211E6B5600FFC515 /* GoogleService-Info-Dev.plist */,
 				BE90183D21063333000800F4 /* Info.plist */,
 			);
 			path = Supporting;
@@ -203,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				BE90182E2106332B000800F4 /* on-the-spot.app */,
+				BE644571211E678F00FFC515 /* on-the-spot-dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +267,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BE64454B211E678F00FFC515 /* on-the-spot-dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE64456E211E678F00FFC515 /* Build configuration list for PBXNativeTarget "on-the-spot-dev" */;
+			buildPhases = (
+				BE64454C211E678F00FFC515 /* [CP] Check Pods Manifest.lock */,
+				BE64454D211E678F00FFC515 /* Sources */,
+				BE644562211E678F00FFC515 /* Frameworks */,
+				BE644565211E678F00FFC515 /* Resources */,
+				BE64456B211E678F00FFC515 /* [CP] Embed Pods Frameworks */,
+				BE64456C211E678F00FFC515 /* [CP] Copy Pods Resources */,
+				BE64456D211E678F00FFC515 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "on-the-spot-dev";
+			productName = "on-the-spot";
+			productReference = BE644571211E678F00FFC515 /* on-the-spot-dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		BE90182D2106332B000800F4 /* on-the-spot */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE90184021063333000800F4 /* Build configuration list for PBXNativeTarget "on-the-spot" */;
@@ -277,11 +338,24 @@
 			projectRoot = "";
 			targets = (
 				BE90182D2106332B000800F4 /* on-the-spot */,
+				BE64454B211E678F00FFC515 /* on-the-spot-dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BE644565211E678F00FFC515 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE644579211E6B5A00FFC515 /* GoogleService-Info-Dev.plist in Resources */,
+				BE644566211E678F00FFC515 /* LaunchScreen.storyboard in Resources */,
+				BE644567211E678F00FFC515 /* Assets.xcassets in Resources */,
+				BE644569211E678F00FFC515 /* Login.storyboard in Resources */,
+				BE64456A211E678F00FFC515 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE90182C2106332B000800F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,6 +435,88 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		BE64454C211E678F00FFC515 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-on-the-spot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE64456B211E678F00FFC515 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE64456C211E678F00FFC515 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-on-the-spot/Pods-on-the-spot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE64456D211E678F00FFC515 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SideMenu.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		FED4F77231E85B09400EE641 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,6 +538,33 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BE64454D211E678F00FFC515 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE64454E211E678F00FFC515 /* ContactTableViewCell.swift in Sources */,
+				BE64454F211E678F00FFC515 /* HomeTableViewController.swift in Sources */,
+				BE644550211E678F00FFC515 /* HomeTableViewCell.swift in Sources */,
+				BE644551211E678F00FFC515 /* FriendsTableViewCell.swift in Sources */,
+				BE644552211E678F00FFC515 /* LoginViewController.swift in Sources */,
+				BE644553211E678F00FFC515 /* GoingFriendsTableViewCell.swift in Sources */,
+				BE644554211E678F00FFC515 /* DisplayAddHangoutViewController.swift in Sources */,
+				BE644555211E678F00FFC515 /* StartViewController.swift in Sources */,
+				BE644556211E678F00FFC515 /* ContactsViewController.swift in Sources */,
+				BE644557211E678F00FFC515 /* User.swift in Sources */,
+				BE644558211E678F00FFC515 /* UserService.swift in Sources */,
+				BE644559211E678F00FFC515 /* FriendService.swift in Sources */,
+				BE64455A211E678F00FFC515 /* AppUtility.swift in Sources */,
+				BE64455B211E678F00FFC515 /* AppDelegate.swift in Sources */,
+				BE64455C211E678F00FFC515 /* SideBarViewController.swift in Sources */,
+				BE64455D211E678F00FFC515 /* DisplayCreatedHangoutViewController.swift in Sources */,
+				BE64455E211E678F00FFC515 /* SignUpViewController.swift in Sources */,
+				BE64455F211E678F00FFC515 /* DisplayInvitedHangoutViewController.swift in Sources */,
+				BE644560211E678F00FFC515 /* Hangout.swift in Sources */,
+				BE644561211E678F00FFC515 /* HangoutService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BE90182A2106332B000800F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -394,12 +577,12 @@
 				BE0BB6C521165875007C2FC2 /* GoingFriendsTableViewCell.swift in Sources */,
 				BE2357AB2107E12A00EE9D2C /* DisplayAddHangoutViewController.swift in Sources */,
 				BE2357A1210794DC00EE9D2C /* StartViewController.swift in Sources */,
+				BE64457A211F726800FFC515 /* AppDelegate.swift in Sources */,
 				BE11E896210A82B5002CCD29 /* ContactsViewController.swift in Sources */,
 				BE6C72F52109259F004630D4 /* User.swift in Sources */,
 				BE6C72F921093A54004630D4 /* UserService.swift in Sources */,
 				BE6C72F721093777004630D4 /* FriendService.swift in Sources */,
 				BED4220B211A5504005E986E /* AppUtility.swift in Sources */,
-				BE9018322106332B000800F4 /* AppDelegate.swift in Sources */,
 				BE2357B52108E2DA00EE9D2C /* SideBarViewController.swift in Sources */,
 				BEB5D0862114F5F400613439 /* DisplayCreatedHangoutViewController.swift in Sources */,
 				BE2357A3210794F700EE9D2C /* SignUpViewController.swift in Sources */,
@@ -431,6 +614,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BE64456F211E678F00FFC515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9289A05CCEA1832DED663CAD /* Pods-on-the-spot.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = DevAppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P8F58SW4DA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/on-the-spot/Supporting/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot.testing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BE644570211E678F00FFC515 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F155D91C4FF765E75C27A6D /* Pods-on-the-spot.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = DevAppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P8F58SW4DA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/on-the-spot/Supporting/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot.testing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		BE90183E21063333000800F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -561,7 +790,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot.testing";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -584,7 +813,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot.testing";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.will-han.on-the-spot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -594,6 +823,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BE64456E211E678F00FFC515 /* Build configuration list for PBXNativeTarget "on-the-spot-dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE64456F211E678F00FFC515 /* Debug */,
+				BE644570211E678F00FFC515 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BE9018292106332B000800F4 /* Build configuration list for PBXProject "on-the-spot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

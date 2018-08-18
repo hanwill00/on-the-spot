@@ -137,7 +137,7 @@ extension DisplayAddHangoutViewController: UITableViewDataSource, UITableViewDel
         let currentCell = tableView.cellForRow(at: indexPath) as! FriendsTableViewCell
         if invitedFriends[friend.uid] == true {
             invitedFriends[friend.uid] = nil
-            currentCell.setSelected(true, animated: true)
+            //currentCell.setSelected(true, animated: true)
         } else {
             invitedFriends[friend.uid] = true
             
